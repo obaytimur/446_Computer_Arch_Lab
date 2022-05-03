@@ -1,0 +1,10 @@
+module const_value #(parameter W=16,value=0)(A)
+
+	output reg [W-1:0] A;	// this is the output bus width equal to W
+	always@*
+	
+	begin
+	A=value;
+	end
+	
+end module 

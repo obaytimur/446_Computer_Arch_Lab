@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'cont_unit:cont_unit_deneme|state.00'
+Slack : -7.567
+TNS   : -45.147
+
+Type  : Slow 1100mV 85C Model Setup 'clock'
+Slack : -6.643
+TNS   : -117.065
+
+Type  : Slow 1100mV 85C Model Setup 'CLR'
+Slack : -4.238
+TNS   : -9.897
+
+Type  : Slow 1100mV 85C Model Hold 'CLR'
+Slack : -4.550
+TNS   : -32.930
+
+Type  : Slow 1100mV 85C Model Hold 'clock'
+Slack : -3.618
+TNS   : -29.439
+
+Type  : Slow 1100mV 85C Model Hold 'cont_unit:cont_unit_deneme|state.00'
+Slack : -1.588
+TNS   : -6.688
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.724
+TNS   : -25.579
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLR'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'cont_unit:cont_unit_deneme|state.00'
+Slack : 0.272
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'cont_unit:cont_unit_deneme|state.00'
+Slack : -7.512
+TNS   : -45.467
+
+Type  : Slow 1100mV 0C Model Setup 'clock'
+Slack : -6.475
+TNS   : -112.426
+
+Type  : Slow 1100mV 0C Model Setup 'CLR'
+Slack : -4.242
+TNS   : -9.598
+
+Type  : Slow 1100mV 0C Model Hold 'CLR'
+Slack : -4.428
+TNS   : -32.929
+
+Type  : Slow 1100mV 0C Model Hold 'clock'
+Slack : -3.629
+TNS   : -32.178
+
+Type  : Slow 1100mV 0C Model Hold 'cont_unit:cont_unit_deneme|state.00'
+Slack : -1.733
+TNS   : -6.898
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.724
+TNS   : -25.782
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLR'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'cont_unit:cont_unit_deneme|state.00'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'cont_unit:cont_unit_deneme|state.00'
+Slack : -3.326
+TNS   : -16.985
+
+Type  : Fast 1100mV 85C Model Setup 'clock'
+Slack : -2.806
+TNS   : -48.421
+
+Type  : Fast 1100mV 85C Model Setup 'CLR'
+Slack : -1.686
+TNS   : -3.139
+
+Type  : Fast 1100mV 85C Model Hold 'CLR'
+Slack : -1.971
+TNS   : -12.045
+
+Type  : Fast 1100mV 85C Model Hold 'clock'
+Slack : -1.592
+TNS   : -9.777
+
+Type  : Fast 1100mV 85C Model Hold 'cont_unit:cont_unit_deneme|state.00'
+Slack : -0.617
+TNS   : -2.670
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.085
+TNS   : -1.852
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLR'
+Slack : 0.024
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'cont_unit:cont_unit_deneme|state.00'
+Slack : 0.314
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'cont_unit:cont_unit_deneme|state.00'
+Slack : -3.018
+TNS   : -15.354
+
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -2.322
+TNS   : -40.371
+
+Type  : Fast 1100mV 0C Model Setup 'CLR'
+Slack : -1.410
+TNS   : -1.893
+
+Type  : Fast 1100mV 0C Model Hold 'CLR'
+Slack : -1.857
+TNS   : -11.979
+
+Type  : Fast 1100mV 0C Model Hold 'clock'
+Slack : -1.540
+TNS   : -10.112
+
+Type  : Fast 1100mV 0C Model Hold 'cont_unit:cont_unit_deneme|state.00'
+Slack : -0.592
+TNS   : -2.471
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.084
+TNS   : -1.854
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLR'
+Slack : 0.019
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'cont_unit:cont_unit_deneme|state.00'
+Slack : 0.345
+TNS   : 0.000
+
+------------------------------------------------------------

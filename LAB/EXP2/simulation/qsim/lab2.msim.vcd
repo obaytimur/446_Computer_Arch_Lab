@@ -1,0 +1,1611 @@
+$comment
+	File created using the following command:
+		vcd file lab2.msim.vcd -direction
+$end
+$date
+	Fri Apr 22 11:52:24 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module alp_vhd_vec_tst $end
+$var wire 1 ! CLR $end
+$var wire 1 " COMP $end
+$var wire 1 # DATA_IN [3] $end
+$var wire 1 $ DATA_IN [2] $end
+$var wire 1 % DATA_IN [1] $end
+$var wire 1 & DATA_IN [0] $end
+$var wire 1 ' ERR $end
+$var wire 1 ( LOAD $end
+$var wire 1 ) OP [2] $end
+$var wire 1 * OP [1] $end
+$var wire 1 + OP [0] $end
+$var wire 1 , OUT_0 [3] $end
+$var wire 1 - OUT_0 [2] $end
+$var wire 1 . OUT_0 [1] $end
+$var wire 1 / OUT_0 [0] $end
+$var wire 1 0 OUT_1 [3] $end
+$var wire 1 1 OUT_1 [2] $end
+$var wire 1 2 OUT_1 [1] $end
+$var wire 1 3 OUT_1 [0] $end
+$var wire 1 4 clock $end
+$var wire 1 5 reset $end
+
+$scope module i1 $end
+$var wire 1 6 gnd $end
+$var wire 1 7 vcc $end
+$var wire 1 8 unknown $end
+$var wire 1 9 devoe $end
+$var wire 1 : devclrn $end
+$var wire 1 ; devpor $end
+$var wire 1 < ww_devoe $end
+$var wire 1 = ww_devclrn $end
+$var wire 1 > ww_devpor $end
+$var wire 1 ? ww_clock $end
+$var wire 1 @ ww_reset $end
+$var wire 1 A ww_DATA_IN [3] $end
+$var wire 1 B ww_DATA_IN [2] $end
+$var wire 1 C ww_DATA_IN [1] $end
+$var wire 1 D ww_DATA_IN [0] $end
+$var wire 1 E ww_OP [2] $end
+$var wire 1 F ww_OP [1] $end
+$var wire 1 G ww_OP [0] $end
+$var wire 1 H ww_LOAD $end
+$var wire 1 I ww_COMP $end
+$var wire 1 J ww_CLR $end
+$var wire 1 K ww_OUT_0 [3] $end
+$var wire 1 L ww_OUT_0 [2] $end
+$var wire 1 M ww_OUT_0 [1] $end
+$var wire 1 N ww_OUT_0 [0] $end
+$var wire 1 O ww_OUT_1 [3] $end
+$var wire 1 P ww_OUT_1 [2] $end
+$var wire 1 Q ww_OUT_1 [1] $end
+$var wire 1 R ww_OUT_1 [0] $end
+$var wire 1 S ww_ERR $end
+$var wire 1 T \~QUARTUS_CREATED_GND~I_combout\ $end
+$var wire 1 U \clock~input_o\ $end
+$var wire 1 V \clock~inputCLKENA0_outclk\ $end
+$var wire 1 W \OP[1]~input_o\ $end
+$var wire 1 X \OP[2]~input_o\ $end
+$var wire 1 Y \OP[0]~input_o\ $end
+$var wire 1 Z \cont_unit_deneme|Equal1~0_combout\ $end
+$var wire 1 [ \reset~input_o\ $end
+$var wire 1 \ \cont_unit_deneme|mux_alu_a_sel~0_combout\ $end
+$var wire 1 ] \LOAD~input_o\ $end
+$var wire 1 ^ \COMP~input_o\ $end
+$var wire 1 _ \CLR~input_o\ $end
+$var wire 1 ` \cont_unit_deneme|alu_op[2]~2_combout\ $end
+$var wire 1 a \cont_unit_deneme|state~14_combout\ $end
+$var wire 1 b \cont_unit_deneme|state.01~q\ $end
+$var wire 1 c \cont_unit_deneme|state~16_combout\ $end
+$var wire 1 d \cont_unit_deneme|state.10~q\ $end
+$var wire 1 e \cont_unit_deneme|seq_count[1]~1_combout\ $end
+$var wire 1 f \cont_unit_deneme|seq_count[1]~2_combout\ $end
+$var wire 1 g \cont_unit_deneme|state~13_combout\ $end
+$var wire 1 h \cont_unit_deneme|seq_count[0]~0_combout\ $end
+$var wire 1 i \cont_unit_deneme|state~15_combout\ $end
+$var wire 1 j \cont_unit_deneme|state.11~q\ $end
+$var wire 1 k \cont_unit_deneme|state~12_combout\ $end
+$var wire 1 l \cont_unit_deneme|state.00~q\ $end
+$var wire 1 m \cont_unit_deneme|qn1_reset~0_combout\ $end
+$var wire 1 n \cont_unit_deneme|acc_reset~combout\ $end
+$var wire 1 o \cont_unit_deneme|alu_op[0]~0_combout\ $end
+$var wire 1 p \cont_unit_deneme|alu_op[1]~4_combout\ $end
+$var wire 1 q \cont_unit_deneme|mux_R0_sel[1]~1_combout\ $end
+$var wire 1 r \cont_unit_deneme|mux_R0_sel[1]~2_combout\ $end
+$var wire 1 s \cont_unit_deneme|mux_R0_sel[0]~0_combout\ $end
+$var wire 1 t \cont_unit_deneme|R0_en~0_combout\ $end
+$var wire 1 u \cont_unit_deneme|RST~combout\ $end
+$var wire 1 v \datapath_deneme|Reg1|out~0_combout\ $end
+$var wire 1 w \datapath_deneme|Reg1|out~1_combout\ $end
+$var wire 1 x \datapath_deneme|Reg1|out~2_combout\ $end
+$var wire 1 y \cont_unit_deneme|R0_en~1_combout\ $end
+$var wire 1 z \cont_unit_deneme|R0_en~combout\ $end
+$var wire 1 { \datapath_deneme|Reg0|out[1]~3_combout\ $end
+$var wire 1 | \datapath_deneme|alu|Add3~18_cout\ $end
+$var wire 1 } \datapath_deneme|alu|Add3~6\ $end
+$var wire 1 ~ \datapath_deneme|alu|Add3~9_sumout\ $end
+$var wire 1 !! \cont_unit_deneme|alu_op[2]~5_combout\ $end
+$var wire 1 "! \datapath_deneme|alu|out[1]~3_combout\ $end
+$var wire 1 #! \datapath_deneme|Reg0|out~0_combout\ $end
+$var wire 1 $! \DATA_IN[1]~input_o\ $end
+$var wire 1 %! \cont_unit_deneme|Q_PS~0_combout\ $end
+$var wire 1 &! \cont_unit_deneme|Q_PS~combout\ $end
+$var wire 1 '! \datapath_deneme|Reg1|out~5_combout\ $end
+$var wire 1 (! \datapath_deneme|Reg1|out~6_combout\ $end
+$var wire 1 )! \datapath_deneme|alu|Add1~18_cout\ $end
+$var wire 1 *! \datapath_deneme|alu|Add1~6\ $end
+$var wire 1 +! \datapath_deneme|alu|Add1~10\ $end
+$var wire 1 ,! \datapath_deneme|alu|Add1~13_sumout\ $end
+$var wire 1 -! \datapath_deneme|mux_alu_b|out[2]~3_combout\ $end
+$var wire 1 .! \datapath_deneme|alu|out[2]~4_combout\ $end
+$var wire 1 /! \cont_unit_deneme|acc_PS~0_combout\ $end
+$var wire 1 0! \cont_unit_deneme|acc_PS~combout\ $end
+$var wire 1 1! \cont_unit_deneme|acc_en~1_combout\ $end
+$var wire 1 2! \cont_unit_deneme|acc_en~0_combout\ $end
+$var wire 1 3! \cont_unit_deneme|acc_en~combout\ $end
+$var wire 1 4! \datapath_deneme|Q|out~3_combout\ $end
+$var wire 1 5! \cont_unit_deneme|Q_en~0_combout\ $end
+$var wire 1 6! \cont_unit_deneme|Q_en~combout\ $end
+$var wire 1 7! \DATA_IN[3]~input_o\ $end
+$var wire 1 8! \datapath_deneme|Reg0|out~8_combout\ $end
+$var wire 1 9! \datapath_deneme|Reg0|out~9_combout\ $end
+$var wire 1 :! \datapath_deneme|alu|Add0~6\ $end
+$var wire 1 ;! \datapath_deneme|alu|Add0~10\ $end
+$var wire 1 <! \datapath_deneme|alu|Add0~14\ $end
+$var wire 1 =! \datapath_deneme|alu|Add0~1_sumout\ $end
+$var wire 1 >! \datapath_deneme|alu|Add3~10\ $end
+$var wire 1 ?! \datapath_deneme|alu|Add3~14\ $end
+$var wire 1 @! \datapath_deneme|alu|Add3~1_sumout\ $end
+$var wire 1 A! \datapath_deneme|mux_alu_a|out[3]~0_combout\ $end
+$var wire 1 B! \datapath_deneme|alu|out[3]~7_combout\ $end
+$var wire 1 C! \datapath_deneme|Reg1|out~7_combout\ $end
+$var wire 1 D! \datapath_deneme|Reg1|out~8_combout\ $end
+$var wire 1 E! \datapath_deneme|mux_alu_b|out[3]~0_combout\ $end
+$var wire 1 F! \datapath_deneme|alu|Add1~14\ $end
+$var wire 1 G! \datapath_deneme|alu|Add1~1_sumout\ $end
+$var wire 1 H! \datapath_deneme|alu|out[3]~6_combout\ $end
+$var wire 1 I! \datapath_deneme|acc|out~10_combout\ $end
+$var wire 1 J! \datapath_deneme|acc|out~2_combout\ $end
+$var wire 1 K! \datapath_deneme|acc|out[1]~1_combout\ $end
+$var wire 1 L! \datapath_deneme|alu|Add3~13_sumout\ $end
+$var wire 1 M! \datapath_deneme|alu|out[2]~5_combout\ $end
+$var wire 1 N! \DATA_IN[2]~input_o\ $end
+$var wire 1 O! \datapath_deneme|Reg0|out~6_combout\ $end
+$var wire 1 P! \datapath_deneme|Reg0|out~7_combout\ $end
+$var wire 1 Q! \datapath_deneme|alu|Add0~13_sumout\ $end
+$var wire 1 R! \datapath_deneme|alu|out[2]~8_combout\ $end
+$var wire 1 S! \datapath_deneme|Q|out~2_combout\ $end
+$var wire 1 T! \datapath_deneme|Q|out~1_combout\ $end
+$var wire 1 U! \datapath_deneme|Reg0|out~4_combout\ $end
+$var wire 1 V! \datapath_deneme|Reg0|out~5_combout\ $end
+$var wire 1 W! \datapath_deneme|alu|Add0~9_sumout\ $end
+$var wire 1 X! \datapath_deneme|alu|out[1]~12_combout\ $end
+$var wire 1 Y! \datapath_deneme|Reg1|out~3_combout\ $end
+$var wire 1 Z! \datapath_deneme|Reg1|out~4_combout\ $end
+$var wire 1 [! \datapath_deneme|mux_alu_b|out[1]~2_combout\ $end
+$var wire 1 \! \datapath_deneme|alu|Add1~9_sumout\ $end
+$var wire 1 ]! \datapath_deneme|alu|out[1]~2_combout\ $end
+$var wire 1 ^! \datapath_deneme|acc|out~6_combout\ $end
+$var wire 1 _! \datapath_deneme|acc|out~0_combout\ $end
+$var wire 1 `! \datapath_deneme|alu|Add0~5_sumout\ $end
+$var wire 1 a! \datapath_deneme|alu|Add1~5_sumout\ $end
+$var wire 1 b! \datapath_deneme|mux_alu_b|out[0]~1_combout\ $end
+$var wire 1 c! \datapath_deneme|alu|out[0]~0_combout\ $end
+$var wire 1 d! \datapath_deneme|Q|out~0_combout\ $end
+$var wire 1 e! \datapath_deneme|qn1|out~0_combout\ $end
+$var wire 1 f! \cont_unit_deneme|alu_op[2]~1_combout\ $end
+$var wire 1 g! \cont_unit_deneme|alu_op[2]~3_combout\ $end
+$var wire 1 h! \cont_unit_deneme|mux_alu_a_sel~combout\ $end
+$var wire 1 i! \datapath_deneme|mux_alu_a|out[0]~1_combout\ $end
+$var wire 1 j! \datapath_deneme|alu|Add3~5_sumout\ $end
+$var wire 1 k! \datapath_deneme|alu|out[0]~1_combout\ $end
+$var wire 1 l! \DATA_IN[0]~input_o\ $end
+$var wire 1 m! \datapath_deneme|Reg0|out~1_combout\ $end
+$var wire 1 n! \datapath_deneme|Reg0|out~2_combout\ $end
+$var wire 1 o! \ERR~0_combout\ $end
+$var wire 1 p! \ERR~1_combout\ $end
+$var wire 1 q! \ERR~2_combout\ $end
+$var wire 1 r! \cont_unit_deneme|alu_op\ [2] $end
+$var wire 1 s! \cont_unit_deneme|alu_op\ [1] $end
+$var wire 1 t! \cont_unit_deneme|alu_op\ [0] $end
+$var wire 1 u! \datapath_deneme|acc|out\ [3] $end
+$var wire 1 v! \datapath_deneme|acc|out\ [2] $end
+$var wire 1 w! \datapath_deneme|acc|out\ [1] $end
+$var wire 1 x! \datapath_deneme|acc|out\ [0] $end
+$var wire 1 y! \datapath_deneme|Reg0|out\ [3] $end
+$var wire 1 z! \datapath_deneme|Reg0|out\ [2] $end
+$var wire 1 {! \datapath_deneme|Reg0|out\ [1] $end
+$var wire 1 |! \datapath_deneme|Reg0|out\ [0] $end
+$var wire 1 }! \datapath_deneme|Reg1|out\ [3] $end
+$var wire 1 ~! \datapath_deneme|Reg1|out\ [2] $end
+$var wire 1 !" \datapath_deneme|Reg1|out\ [1] $end
+$var wire 1 "" \datapath_deneme|Reg1|out\ [0] $end
+$var wire 1 #" \cont_unit_deneme|mux_alu_b_sel\ [1] $end
+$var wire 1 $" \cont_unit_deneme|mux_alu_b_sel\ [0] $end
+$var wire 1 %" \datapath_deneme|Q|out\ [3] $end
+$var wire 1 &" \datapath_deneme|Q|out\ [2] $end
+$var wire 1 '" \datapath_deneme|Q|out\ [1] $end
+$var wire 1 (" \datapath_deneme|Q|out\ [0] $end
+$var wire 1 )" \cont_unit_deneme|mux_R0_sel\ [1] $end
+$var wire 1 *" \cont_unit_deneme|mux_R0_sel\ [0] $end
+$var wire 1 +" \datapath_deneme|qn1|out\ [0] $end
+$var wire 1 ," \cont_unit_deneme|seq_count\ [1] $end
+$var wire 1 -" \cont_unit_deneme|seq_count\ [0] $end
+$var wire 1 ." \cont_unit_deneme|mux_R1_sel\ [1] $end
+$var wire 1 /" \cont_unit_deneme|mux_R1_sel\ [0] $end
+$var wire 1 0" \ALT_INV_reset~input_o\ $end
+$var wire 1 1" \ALT_INV_CLR~input_o\ $end
+$var wire 1 2" \ALT_INV_LOAD~input_o\ $end
+$var wire 1 3" \ALT_INV_OP[1]~input_o\ $end
+$var wire 1 4" \ALT_INV_OP[2]~input_o\ $end
+$var wire 1 5" \ALT_INV_OP[0]~input_o\ $end
+$var wire 1 6" \ALT_INV_DATA_IN[3]~input_o\ $end
+$var wire 1 7" \ALT_INV_DATA_IN[2]~input_o\ $end
+$var wire 1 8" \ALT_INV_DATA_IN[1]~input_o\ $end
+$var wire 1 9" \ALT_INV_DATA_IN[0]~input_o\ $end
+$var wire 1 :" \ALT_INV_COMP~input_o\ $end
+$var wire 1 ;" \cont_unit_deneme|ALT_INV_Q_en~combout\ $end
+$var wire 1 <" \cont_unit_deneme|ALT_INV_Q_PS~combout\ $end
+$var wire 1 =" \cont_unit_deneme|ALT_INV_acc_reset~combout\ $end
+$var wire 1 >" \cont_unit_deneme|ALT_INV_acc_PS~combout\ $end
+$var wire 1 ?" \cont_unit_deneme|ALT_INV_acc_en~combout\ $end
+$var wire 1 @" \cont_unit_deneme|ALT_INV_mux_R1_sel\ [1] $end
+$var wire 1 A" \cont_unit_deneme|ALT_INV_mux_R1_sel\ [0] $end
+$var wire 1 B" \cont_unit_deneme|ALT_INV_R0_en~combout\ $end
+$var wire 1 C" \cont_unit_deneme|ALT_INV_mux_R0_sel\ [1] $end
+$var wire 1 D" \cont_unit_deneme|ALT_INV_mux_R0_sel\ [0] $end
+$var wire 1 E" \cont_unit_deneme|ALT_INV_RST~combout\ $end
+$var wire 1 F" \cont_unit_deneme|ALT_INV_mux_alu_b_sel\ [1] $end
+$var wire 1 G" \cont_unit_deneme|ALT_INV_alu_op\ [2] $end
+$var wire 1 H" \cont_unit_deneme|ALT_INV_alu_op\ [1] $end
+$var wire 1 I" \cont_unit_deneme|ALT_INV_alu_op\ [0] $end
+$var wire 1 J" \cont_unit_deneme|ALT_INV_mux_alu_a_sel~combout\ $end
+$var wire 1 K" \cont_unit_deneme|ALT_INV_seq_count[1]~1_combout\ $end
+$var wire 1 L" \cont_unit_deneme|ALT_INV_Q_en~0_combout\ $end
+$var wire 1 M" \cont_unit_deneme|ALT_INV_Q_PS~0_combout\ $end
+$var wire 1 N" \cont_unit_deneme|ALT_INV_qn1_reset~0_combout\ $end
+$var wire 1 O" \cont_unit_deneme|ALT_INV_acc_PS~0_combout\ $end
+$var wire 1 P" \cont_unit_deneme|ALT_INV_acc_en~1_combout\ $end
+$var wire 1 Q" \cont_unit_deneme|ALT_INV_acc_en~0_combout\ $end
+$var wire 1 R" \cont_unit_deneme|ALT_INV_state~13_combout\ $end
+$var wire 1 S" \cont_unit_deneme|ALT_INV_state.10~q\ $end
+$var wire 1 T" \cont_unit_deneme|ALT_INV_seq_count\ [1] $end
+$var wire 1 U" \cont_unit_deneme|ALT_INV_seq_count\ [0] $end
+$var wire 1 V" \cont_unit_deneme|ALT_INV_R0_en~1_combout\ $end
+$var wire 1 W" \cont_unit_deneme|ALT_INV_Equal1~0_combout\ $end
+$var wire 1 X" \cont_unit_deneme|ALT_INV_R0_en~0_combout\ $end
+$var wire 1 Y" \cont_unit_deneme|ALT_INV_mux_R0_sel[1]~2_combout\ $end
+$var wire 1 Z" \cont_unit_deneme|ALT_INV_mux_R0_sel[1]~1_combout\ $end
+$var wire 1 [" \cont_unit_deneme|ALT_INV_state.11~q\ $end
+$var wire 1 \" \cont_unit_deneme|ALT_INV_mux_R0_sel[0]~0_combout\ $end
+$var wire 1 ]" \cont_unit_deneme|ALT_INV_alu_op[2]~5_combout\ $end
+$var wire 1 ^" \cont_unit_deneme|ALT_INV_mux_alu_a_sel~0_combout\ $end
+$var wire 1 _" \cont_unit_deneme|ALT_INV_alu_op[1]~4_combout\ $end
+$var wire 1 `" \cont_unit_deneme|ALT_INV_alu_op[2]~3_combout\ $end
+$var wire 1 a" \cont_unit_deneme|ALT_INV_alu_op[2]~2_combout\ $end
+$var wire 1 b" \cont_unit_deneme|ALT_INV_state.01~q\ $end
+$var wire 1 c" \datapath_deneme|qn1|ALT_INV_out\ [0] $end
+$var wire 1 d" \cont_unit_deneme|ALT_INV_alu_op[2]~1_combout\ $end
+$var wire 1 e" \cont_unit_deneme|ALT_INV_alu_op[0]~0_combout\ $end
+$var wire 1 f" \cont_unit_deneme|ALT_INV_state.00~q\ $end
+$var wire 1 g" \datapath_deneme|Reg1|ALT_INV_out~7_combout\ $end
+$var wire 1 h" \datapath_deneme|Reg1|ALT_INV_out~5_combout\ $end
+$var wire 1 i" \datapath_deneme|Reg1|ALT_INV_out~3_combout\ $end
+$var wire 1 j" \datapath_deneme|Reg1|ALT_INV_out~1_combout\ $end
+$var wire 1 k" \datapath_deneme|Reg1|ALT_INV_out~0_combout\ $end
+$var wire 1 l" \datapath_deneme|Reg0|ALT_INV_out~8_combout\ $end
+$var wire 1 m" \datapath_deneme|Q|ALT_INV_out\ [3] $end
+$var wire 1 n" \datapath_deneme|Q|ALT_INV_out\ [2] $end
+$var wire 1 o" \datapath_deneme|Q|ALT_INV_out\ [1] $end
+$var wire 1 p" \datapath_deneme|Q|ALT_INV_out\ [0] $end
+$var wire 1 q" \datapath_deneme|alu|ALT_INV_out[3]~7_combout\ $end
+$var wire 1 r" \datapath_deneme|alu|ALT_INV_out[3]~6_combout\ $end
+$var wire 1 s" \datapath_deneme|Reg0|ALT_INV_out~6_combout\ $end
+$var wire 1 t" \datapath_deneme|alu|ALT_INV_out[2]~5_combout\ $end
+$var wire 1 u" \datapath_deneme|alu|ALT_INV_out[2]~4_combout\ $end
+$var wire 1 v" \datapath_deneme|mux_alu_b|ALT_INV_out[2]~3_combout\ $end
+$var wire 1 w" \datapath_deneme|acc|ALT_INV_out\ [3] $end
+$var wire 1 x" \datapath_deneme|acc|ALT_INV_out\ [2] $end
+$var wire 1 y" \datapath_deneme|acc|ALT_INV_out\ [1] $end
+$var wire 1 z" \datapath_deneme|acc|ALT_INV_out\ [0] $end
+$var wire 1 {" \datapath_deneme|Reg0|ALT_INV_out~4_combout\ $end
+$var wire 1 |" \datapath_deneme|alu|ALT_INV_out[1]~3_combout\ $end
+$var wire 1 }" \datapath_deneme|alu|ALT_INV_out[1]~2_combout\ $end
+$var wire 1 ~" \datapath_deneme|mux_alu_b|ALT_INV_out[1]~2_combout\ $end
+$var wire 1 !# \datapath_deneme|Reg0|ALT_INV_out~1_combout\ $end
+$var wire 1 "# \datapath_deneme|Reg0|ALT_INV_out~0_combout\ $end
+$var wire 1 ## \datapath_deneme|alu|ALT_INV_out[0]~1_combout\ $end
+$var wire 1 $# \datapath_deneme|alu|ALT_INV_out[0]~0_combout\ $end
+$var wire 1 %# \datapath_deneme|mux_alu_b|ALT_INV_out[0]~1_combout\ $end
+$var wire 1 &# \datapath_deneme|mux_alu_a|ALT_INV_out[0]~1_combout\ $end
+$var wire 1 '# \ALT_INV_ERR~1_combout\ $end
+$var wire 1 (# \ALT_INV_ERR~0_combout\ $end
+$var wire 1 )# \datapath_deneme|mux_alu_b|ALT_INV_out[3]~0_combout\ $end
+$var wire 1 *# \datapath_deneme|mux_alu_a|ALT_INV_out[3]~0_combout\ $end
+$var wire 1 +# \datapath_deneme|Reg1|ALT_INV_out\ [3] $end
+$var wire 1 ,# \datapath_deneme|Reg1|ALT_INV_out\ [2] $end
+$var wire 1 -# \datapath_deneme|Reg1|ALT_INV_out\ [1] $end
+$var wire 1 .# \datapath_deneme|Reg1|ALT_INV_out\ [0] $end
+$var wire 1 /# \datapath_deneme|Reg0|ALT_INV_out\ [3] $end
+$var wire 1 0# \datapath_deneme|Reg0|ALT_INV_out\ [2] $end
+$var wire 1 1# \datapath_deneme|Reg0|ALT_INV_out\ [1] $end
+$var wire 1 2# \datapath_deneme|Reg0|ALT_INV_out\ [0] $end
+$var wire 1 3# \datapath_deneme|alu|ALT_INV_out[1]~12_combout\ $end
+$var wire 1 4# \datapath_deneme|alu|ALT_INV_out[2]~8_combout\ $end
+$var wire 1 5# \datapath_deneme|alu|ALT_INV_Add0~13_sumout\ $end
+$var wire 1 6# \datapath_deneme|alu|ALT_INV_Add3~13_sumout\ $end
+$var wire 1 7# \datapath_deneme|alu|ALT_INV_Add1~13_sumout\ $end
+$var wire 1 8# \datapath_deneme|alu|ALT_INV_Add0~9_sumout\ $end
+$var wire 1 9# \datapath_deneme|alu|ALT_INV_Add3~9_sumout\ $end
+$var wire 1 :# \datapath_deneme|alu|ALT_INV_Add1~9_sumout\ $end
+$var wire 1 ;# \datapath_deneme|alu|ALT_INV_Add3~5_sumout\ $end
+$var wire 1 <# \datapath_deneme|alu|ALT_INV_Add1~5_sumout\ $end
+$var wire 1 =# \datapath_deneme|alu|ALT_INV_Add0~5_sumout\ $end
+$var wire 1 ># \datapath_deneme|alu|ALT_INV_Add1~1_sumout\ $end
+$var wire 1 ?# \datapath_deneme|alu|ALT_INV_Add3~1_sumout\ $end
+$var wire 1 @# \datapath_deneme|alu|ALT_INV_Add0~1_sumout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0'
+1(
+04
+05
+06
+17
+x8
+19
+1:
+1;
+1<
+1=
+1>
+0?
+0@
+1H
+0I
+0J
+0S
+xT
+0U
+0V
+1W
+0X
+0Y
+1Z
+0[
+1\
+1]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+xn
+0o
+1p
+0q
+1r
+1s
+1t
+0u
+0v
+0w
+0x
+1y
+1z
+1{
+1|
+1}
+0~
+0!!
+0"!
+0#!
+1$!
+0%!
+x&!
+0'!
+0(!
+1)!
+1*!
+1+!
+0,!
+0-!
+x.!
+0/!
+x0!
+01!
+12!
+x3!
+x4!
+05!
+x6!
+07!
+08!
+09!
+0:!
+0;!
+0<!
+0=!
+1>!
+1?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+1F!
+0G!
+xH!
+xI!
+xJ!
+xK!
+0L!
+0M!
+0N!
+0O!
+0P!
+0Q!
+xR!
+xS!
+xT!
+1U!
+1V!
+0W!
+xX!
+0Y!
+0Z!
+0[!
+0\!
+x]!
+x^!
+x_!
+0`!
+0a!
+0b!
+xc!
+xd!
+0e!
+0f!
+0g!
+xh!
+0i!
+0j!
+0k!
+1l!
+1m!
+1n!
+0o!
+xp!
+0q!
+10"
+11"
+02"
+03"
+14"
+15"
+16"
+17"
+08"
+09"
+1:"
+x;"
+x<"
+x="
+x>"
+x?"
+0B"
+1E"
+xJ"
+1K"
+1L"
+1M"
+1N"
+1O"
+1P"
+0Q"
+1R"
+1S"
+0V"
+0W"
+0X"
+0Y"
+1Z"
+1["
+0\"
+1]"
+0^"
+0_"
+1`"
+1a"
+1b"
+1d"
+1e"
+1f"
+1g"
+1h"
+1i"
+1j"
+1k"
+1l"
+1q"
+xr"
+1s"
+1t"
+xu"
+1v"
+0{"
+1|"
+x}"
+1~"
+0!#
+1"#
+1##
+x$#
+1%#
+1&#
+x'#
+1(#
+1)#
+1*#
+x3#
+x4#
+15#
+16#
+17#
+18#
+19#
+1:#
+1;#
+1<#
+1=#
+1>#
+1?#
+1@#
+0#
+0$
+1%
+1&
+0)
+1*
+0+
+0,
+0-
+0.
+0/
+00
+01
+02
+03
+0A
+0B
+1C
+1D
+0E
+1F
+0G
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+xr!
+xs!
+xt!
+0u!
+0v!
+0w!
+0x!
+0y!
+0z!
+0{!
+0|!
+0}!
+0~!
+0!"
+0""
+x#"
+x$"
+0%"
+0&"
+0'"
+0("
+0)"
+1*"
+0+"
+0,"
+0-"
+0."
+0/"
+1@"
+1A"
+1C"
+0D"
+xF"
+xG"
+xH"
+xI"
+1T"
+1U"
+1c"
+1m"
+1n"
+1o"
+1p"
+1w"
+1x"
+1y"
+1z"
+1+#
+1,#
+1-#
+1.#
+1/#
+10#
+11#
+12#
+$end
+#40000
+14
+1?
+1U
+1V
+xu!
+1{!
+1|!
+02#
+01#
+xw"
+x=!
+x@!
+xE!
+xG!
+x~
+x>!
+x\!
+xW!
+1Y!
+1w
+xj!
+x}
+xa!
+x`!
+xi!
+x&#
+x=#
+x<#
+x;#
+0j"
+0i"
+x8#
+x:#
+x9#
+x>#
+x)#
+x?#
+x@#
+1N
+1M
+xL!
+x?!
+xB!
+x"!
+1Z!
+1x
+xk!
+x6#
+1/
+1.
+x##
+x|"
+xq"
+xM!
+xt"
+#80000
+04
+1#
+1$
+0&
+0?
+0D
+1B
+1A
+17!
+1N!
+0l!
+0U
+0V
+19"
+07"
+06"
+18!
+1O!
+0m!
+1!#
+0s"
+0l"
+19!
+1P!
+0n!
+#120000
+14
+1?
+1U
+1V
+1""
+1y!
+1z!
+1!"
+0|!
+12#
+0-#
+00#
+0/#
+0.#
+xb!
+xA!
+1C!
+1'!
+x,!
+xQ!
+x+!
+x;!
+x[!
+0w
+1}
+x*!
+0i!
+1&#
+1j"
+x~"
+x5#
+x7#
+0h"
+0g"
+x*#
+x%#
+0N
+1Q
+1L
+1K
+1R
+x<!
+xF!
+1D!
+1(!
+0x
+0/
+1-
+1,
+13
+12
+#150000
+0#
+1&
+1"
+0(
+1D
+0A
+1I
+0H
+0]
+1^
+07!
+1l!
+09"
+16"
+0:"
+12"
+0s
+0t
+1`
+1q
+xo!
+08!
+1m!
+0!#
+1l"
+x(#
+0Z"
+0a"
+1X"
+1\"
+1/"
+0*"
+1."
+0z
+1a
+1f
+1h
+1k
+1m
+1%!
+15!
+1g!
+0r
+xq!
+09!
+1n!
+1Y"
+0`"
+0L"
+0M"
+0N"
+1B"
+0@"
+1D"
+0A"
+1#!
+0O!
+0U!
+0m!
+0'!
+0C!
+0Y!
+0{
+1n
+1&!
+16!
+0#"
+0t!
+0s!
+0r!
+1h!
+0J"
+1G"
+1H"
+1I"
+1F"
+0;"
+0<"
+0="
+1i"
+1g"
+1h"
+1!#
+1{"
+1s"
+0"#
+xS
+1K!
+0E!
+1[!
+1b!
+0(!
+x9!
+0D!
+0I!
+xP!
+xV!
+0Z!
+0_!
+xn!
+0p!
+0"!
+0M!
+1j!
+1~
+1>!
+1a!
+0*!
+0+!
+1`!
+1W!
+0;!
+0<!
+0A!
+x'
+1*#
+08#
+0=#
+0<#
+09#
+0;#
+1t"
+1|"
+1'#
+0%#
+0~"
+1)#
+0=!
+0Q!
+1,!
+0F!
+0\!
+0L!
+1?!
+1c!
+1k!
+1o!
+16#
+1:#
+07#
+15#
+1@#
+1X!
+0@!
+1G!
+0(#
+0##
+0$#
+0B!
+0q!
+1.!
+0]!
+0>#
+1?#
+03#
+0R!
+1d!
+1n!
+1}"
+0u"
+1q"
+1T!
+1V!
+1H!
+14#
+04!
+09!
+0r"
+0P!
+0S!
+0S
+0'
+#160000
+04
+0?
+0U
+0V
+#200000
+14
+1?
+1U
+1V
+1b
+1,"
+1-"
+1l
+0u!
+xv!
+1'"
+xw!
+1("
+0p"
+xy"
+0o"
+xx"
+1w"
+0f"
+0U"
+0T"
+0b"
+1c
+06!
+0\
+1#"
+0n
+1t
+0y
+0%!
+0&!
+11!
+0p
+1/!
+0O"
+1_"
+0P"
+1<"
+1M"
+1V"
+0X"
+1="
+0F"
+1^"
+1;"
+0a
+0h!
+0j!
+x~
+0a!
+1*!
+x\!
+x,!
+x-!
+0`!
+xW!
+xQ!
+xL!
+x[!
+0b!
+xK!
+x_!
+1e!
+0T!
+13!
+1s!
+10!
+0>"
+0H"
+0?"
+1%#
+x~"
+x6#
+x5#
+x8#
+1=#
+xv"
+x7#
+x:#
+1<#
+x9#
+1;#
+1J"
+x+!
+x>!
+1+!
+xF!
+x;!
+x<!
+1=!
+x?!
+1@!
+1A!
+0G!
+1K!
+x"!
+0.!
+0H!
+xM!
+0X!
+0c!
+0k!
+0o!
+1p!
+1q!
+0J!
+1^!
+1_!
+0'#
+1(#
+1##
+1$#
+13#
+xt"
+1r"
+1u"
+x|"
+1>#
+0*#
+0?#
+0@#
+x@!
+x=!
+xG!
+1F!
+1B!
+1o!
+0p!
+xJ!
+xP!
+xV!
+x^!
+0_!
+0n!
+0q!
+x>#
+x@#
+x?#
+1G!
+1'#
+0(#
+0q"
+1S
+xB!
+xp!
+0>#
+19!
+1q!
+x'#
+xq"
+1'
+1I!
+0S
+x9!
+xq!
+xI!
+0'
+1S
+1'
+xS
+x'
+#240000
+04
+0?
+0U
+0V
+#280000
+14
+1?
+1U
+1V
+0b
+1d
+xu!
+1+"
+0c"
+xw"
+0S"
+1b"
+0c
+0m
+00!
+16!
+1g
+1%!
+xE!
+xG!
+0g!
+1`"
+x>#
+x)#
+0M"
+0R"
+0;"
+1>"
+1N"
+x_!
+1a
+0h
+xo!
+x(#
+#320000
+04
+0?
+0U
+0V
+#360000
+14
+1?
+1U
+1V
+1b
+0d
+0-"
+0'"
+xx!
+xz"
+1o"
+1U"
+1S"
+0b"
+1c
+1m
+10!
+02!
+06!
+0%!
+0/!
+1e
+0g
+1h
+0d!
+xj!
+xa!
+x*!
+x4!
+x`!
+xb!
+x%#
+x=#
+x<#
+x;#
+1R"
+0K"
+1O"
+1M"
+1;"
+1Q"
+0>"
+0N"
+x+!
+0_!
+03!
+0a
+0h
+xc!
+xk!
+xF!
+x##
+x$#
+1?"
+0K!
+x_!
+xn!
+#400000
+04
+0?
+0U
+0V
+#440000
+14
+1?
+1U
+1V
+0b
+1d
+0S"
+1b"
+0c
+0m
+12!
+16!
+1g
+1%!
+1/!
+0O"
+0M"
+0R"
+0;"
+0Q"
+1N"
+13!
+1a
+0f
+1h
+00!
+1>"
+0?"
+1K!
+#480000
+04
+0?
+0U
+0V
+#520000
+14
+1?
+1U
+1V
+1b
+0d
+0,"
+1-"
+x%"
+0("
+1p"
+xm"
+0U"
+1T"
+1S"
+0b"
+1c
+1m
+10!
+06!
+0%!
+0g
+0h
+xS!
+1p
+0e!
+1g!
+0`"
+0_"
+1R"
+1M"
+1;"
+0>"
+0N"
+0a
+1h
+0s!
+1H"
+0"!
+x.!
+xH!
+0M!
+xR!
+xX!
+x]!
+0p!
+1'#
+x}"
+x3#
+x4#
+1t"
+xr"
+xu"
+1|"
+#560000
+04
+0?
+0U
+0V
+#600000
+14
+1?
+1U
+1V
+0b
+1d
+0+"
+1c"
+0S"
+1b"
+0c
+0m
+00!
+16!
+1g
+1%!
+0p
+0g!
+1`"
+1_"
+0M"
+0R"
+0;"
+1>"
+1N"
+1a
+0h
+#640000
+04
+0?
+0U
+0V
+#680000
+14
+1?
+1U
+1V
+1b
+0d
+0-"
+x&"
+xn"
+1U"
+1S"
+0b"
+1c
+1m
+10!
+02!
+06!
+0%!
+0/!
+0e
+0g
+1h
+xT!
+1R"
+1K"
+1O"
+1M"
+1;"
+1Q"
+0>"
+0N"
+03!
+0a
+0h
+1?"
+0K!
+#720000
+04
+0?
+0U
+0V
+#750000
+1#
+0&
+0$
+0D
+0B
+1A
+17!
+0N!
+0l!
+19"
+17"
+06"
+#760000
+14
+1?
+1U
+1V
+0b
+1d
+0S"
+1b"
+0c
+0m
+12!
+16!
+1i
+1%!
+1/!
+0O"
+0M"
+0;"
+0Q"
+1N"
+13!
+00!
+1>"
+0?"
+1K!
+#800000
+04
+0?
+0U
+0V
+#840000
+14
+1?
+1U
+1V
+0d
+1j
+x'"
+xo"
+0["
+1S"
+0i
+0%!
+0/!
+01!
+05!
+0k
+1r
+1y
+xd!
+0V"
+0Y"
+1L"
+1P"
+1O"
+1M"
+0."
+1)"
+1z
+0B"
+0C"
+1@"
+xw
+x'!
+xC!
+xY!
+0#!
+x8!
+xO!
+xU!
+1{
+x{"
+xs"
+xl"
+1"#
+xi"
+xg"
+xh"
+xj"
+xx
+x(!
+xD!
+xZ!
+0n!
+#880000
+04
+0?
+0U
+0V
+#920000
+14
+1?
+1U
+1V
+0j
+0l
+x""
+x~!
+xy!
+x}!
+xz!
+x{!
+x!"
+x("
+xp"
+x-#
+x1#
+x0#
+x+#
+x/#
+x,#
+x.#
+1f"
+1["
+1\
+1h
+1k
+1m
+0r
+0t
+0)"
+1%!
+15!
+xA!
+1p
+xe!
+1g!
+xm!
+x!#
+0`"
+0_"
+x*#
+0L"
+0M"
+1C"
+1X"
+1Y"
+0N"
+0^"
+xQ
+xM
+xL
+xO
+xK
+xP
+xR
+1a
+1f
+1n
+0z
+1#!
+08!
+0O!
+0U!
+0m!
+1&!
+0#"
+1h!
+xn!
+x3
+x2
+x1
+x0
+x.
+x-
+x,
+0J"
+1F"
+0<"
+1!#
+1{"
+1s"
+1l"
+0"#
+1B"
+0="
+0I!
+0J!
+0^!
+0_!
+0e!
+0{
+1>!
+0;!
+0A!
+1*#
+0<!
+1?!
+#960000
+04
+0?
+0U
+0V
+#1000000

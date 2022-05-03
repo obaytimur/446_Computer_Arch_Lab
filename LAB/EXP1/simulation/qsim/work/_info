@@ -1,0 +1,131 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/OKUL/4-2/446/LAB/EXP1/simulation/qsim
+Edatapath_design
+Z1 w1648808840
+Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 3HQPc5MVbmOPN?>a5EBYj2
+Z3 DPx8 cyclonev 19 cyclonev_components 0 22 jZ]H46BQLgIP5mfRTO`3B1
+Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 ^Ch;U@;bMk1;>A2B<UV`k2
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z10 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
+!i122 46
+R0
+Z11 8module_design.vho
+Z12 Fmodule_design.vho
+l0
+L39 1
+VWW4j>KRYQbLZOeb?USFS[1
+!s100 gIQg__aDY_gJRM7[Y?1mH3
+Z13 OV;C;2020.1;71
+32
+Z14 !s110 1648808842
+!i10b 1
+Z15 !s108 1648808841.000000
+Z16 !s90 -work|work|module_design.vho|
+Z17 !s107 module_design.vho|
+!i113 1
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 15 datapath_design 0 22 WW4j>KRYQbLZOeb?USFS[1
+!i122 46
+l232
+L93 1748
+V@UoeEAg<N8YT2f<6z=@6R2
+!s100 @cHCJF3mCjE=1Xf7V2hjO3
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Edatapath_design_vhd_vec_tst
+Z20 w1648808839
+R8
+R9
+!i122 47
+R0
+Z21 8Waveform_acc_output_added.vwf.vht
+Z22 FWaveform_acc_output_added.vwf.vht
+l0
+L32 1
+VJVWK6dRCkd:P5FAz71[BS2
+!s100 gI]IhjQ?>Bg::j:JF@2YC0
+R13
+32
+R14
+!i10b 1
+Z23 !s108 1648808842.000000
+Z24 !s90 -work|work|Waveform_acc_output_added.vwf.vht|
+Z25 !s107 Waveform_acc_output_added.vwf.vht|
+!i113 1
+R18
+R19
+Adatapath_design_arch
+R8
+R9
+Z26 DEx4 work 27 datapath_design_vhd_vec_tst 0 22 JVWK6dRCkd:P5FAz71[BS2
+!i122 47
+l73
+Z27 L34 175
+VabYQ=O1hV76VGo>d2ad:h0
+!s100 dlNnA_XRZ39Ag0VX`Qclm1
+R13
+32
+R14
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R18
+R19
+vdatapath_design_vlg_vec_tst
+!s110 1648807105
+!i10b 1
+!s100 UiJCJC^2VG2W:`VAG2kFE3
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+Izdb9HWW1@CRjfCH2gkBJ`0
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1648807102
+8Waveform_lab_deneme_q_output.vwf.vt
+FWaveform_lab_deneme_q_output.vwf.vt
+!i122 33
+L0 30 135
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1648807104.000000
+!s107 Waveform_lab_deneme_q_output.vwf.vt|
+!s90 -work|work|Waveform_lab_deneme_q_output.vwf.vt|
+!i113 1
+R18
+tCvgOpt 0

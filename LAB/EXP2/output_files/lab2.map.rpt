@@ -1,0 +1,664 @@
+Analysis & Synthesis report for lab2
+Fri Apr 22 11:50:53 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |alp|cont_unit:cont_unit_deneme|state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: datapath:datapath_deneme|alu_8op:alu
+ 14. Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_2x1:mux_alu_a
+ 15. Parameter Settings for User Entity Instance: datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg0
+ 16. Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_4x1:mux_R0
+ 17. Parameter Settings for User Entity Instance: datapath:datapath_deneme|shift_reg:Q
+ 18. Parameter Settings for User Entity Instance: datapath:datapath_deneme|shift_reg:acc
+ 19. Parameter Settings for User Entity Instance: datapath:datapath_deneme|const_value:inst11
+ 20. Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_4x1:mux_alu_b
+ 21. Parameter Settings for User Entity Instance: datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg1
+ 22. Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_4x1:mux_R1
+ 23. Parameter Settings for User Entity Instance: datapath:datapath_deneme|simp_reg_sync_reset_with_enable:qn1
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Apr 22 11:50:53 2022       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; lab2                                        ;
+; Top-level Entity Name           ; alp                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 23                                          ;
+; Total pins                      ; 21                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; alp                ; lab2               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++-------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type                          ; File Name with Absolute Path                               ; Library ;
++-------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
+; ../EXP1/simp_reg_sync_reset_with_enable.v ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP1/simp_reg_sync_reset_with_enable.v ;         ;
+; ../EXP1/shift_reg.v                       ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP1/shift_reg.v                       ;         ;
+; ../EXP1/mux_4x1.v                         ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v                         ;         ;
+; ../EXP1/mux_2x1.v                         ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP1/mux_2x1.v                         ;         ;
+; ../EXP1/const_value.v                     ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP1/const_value.v                     ;         ;
+; ../EXP1/alu_8op.v                         ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v                         ;         ;
+; datapath.bdf                              ; yes             ; User Block Diagram/Schematic File  ; D:/OKUL/4-2/446/LAB/EXP2/datapath.bdf                      ;         ;
+; cont_unit.v                               ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v                       ;         ;
+; alp.v                                     ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP2/alp.v                             ;         ;
++-------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                        ;
++---------------------------------------------+--------------------------------------+
+; Resource                                    ; Usage                                ;
++---------------------------------------------+--------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 66                                   ;
+;                                             ;                                      ;
+; Combinational ALUT usage for logic          ; 105                                  ;
+;     -- 7 input functions                    ; 5                                    ;
+;     -- 6 input functions                    ; 21                                   ;
+;     -- 5 input functions                    ; 29                                   ;
+;     -- 4 input functions                    ; 11                                   ;
+;     -- <=3 input functions                  ; 39                                   ;
+;                                             ;                                      ;
+; Dedicated logic registers                   ; 23                                   ;
+;                                             ;                                      ;
+; I/O pins                                    ; 21                                   ;
+;                                             ;                                      ;
+; Total DSP Blocks                            ; 0                                    ;
+;                                             ;                                      ;
+; Maximum fan-out node                        ; cont_unit:cont_unit_deneme|alu_op[0] ;
+; Maximum fan-out                             ; 24                                   ;
+; Total fan-out                               ; 554                                  ;
+; Average fan-out                             ; 3.26                                 ;
++---------------------------------------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+---------------------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name                     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+---------------------------------+--------------+
+; |alp                                         ; 105 (3)             ; 23 (0)                    ; 0                 ; 0          ; 21   ; 0            ; |alp                                                               ; alp                             ; work         ;
+;    |cont_unit:cont_unit_deneme|              ; 43 (43)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|cont_unit:cont_unit_deneme                                    ; cont_unit                       ; work         ;
+;    |datapath:datapath_deneme|                ; 59 (0)              ; 17 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme                                      ; datapath                        ; work         ;
+;       |alu_8op:alu|                          ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|alu_8op:alu                          ; alu_8op                         ; work         ;
+;       |mux_2x1:mux_alu_a|                    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|mux_2x1:mux_alu_a                    ; mux_2x1                         ; work         ;
+;       |mux_4x1:mux_alu_b|                    ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|mux_4x1:mux_alu_b                    ; mux_4x1                         ; work         ;
+;       |shift_reg:Q|                          ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|shift_reg:Q                          ; shift_reg                       ; work         ;
+;       |shift_reg:acc|                        ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|shift_reg:acc                        ; shift_reg                       ; work         ;
+;       |simp_reg_sync_reset_with_enable:Reg0| ; 10 (10)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg0 ; simp_reg_sync_reset_with_enable ; work         ;
+;       |simp_reg_sync_reset_with_enable:Reg1| ; 9 (9)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg1 ; simp_reg_sync_reset_with_enable ; work         ;
+;       |simp_reg_sync_reset_with_enable:qn1|  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |alp|datapath:datapath_deneme|simp_reg_sync_reset_with_enable:qn1  ; simp_reg_sync_reset_with_enable ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+---------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------+
+; State Machine - |alp|cont_unit:cont_unit_deneme|state ;
++----------+----------+----------+----------+-----------+
+; Name     ; state.11 ; state.10 ; state.01 ; state.00  ;
++----------+----------+----------+----------+-----------+
+; state.00 ; 0        ; 0        ; 0        ; 0         ;
+; state.01 ; 0        ; 0        ; 1        ; 1         ;
+; state.10 ; 0        ; 1        ; 0        ; 1         ;
+; state.11 ; 1        ; 0        ; 0        ; 1         ;
++----------+----------+----------+----------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                     ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                      ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+; cont_unit:cont_unit_deneme|alu_op[0]                ; cont_unit:cont_unit_deneme|alu_op[2]     ; yes                    ;
+; cont_unit:cont_unit_deneme|alu_op[1]                ; cont_unit:cont_unit_deneme|alu_op[2]     ; yes                    ;
+; cont_unit:cont_unit_deneme|alu_op[2]                ; cont_unit:cont_unit_deneme|alu_op[2]     ; yes                    ;
+; cont_unit:cont_unit_deneme|mux_alu_b_sel[1]         ; cont_unit:cont_unit_deneme|alu_op[2]     ; yes                    ;
+; cont_unit:cont_unit_deneme|mux_alu_a_sel            ; cont_unit:cont_unit_deneme|alu_op[2]     ; yes                    ;
+; cont_unit:cont_unit_deneme|RST                      ; cont_unit:cont_unit_deneme|state.00      ; yes                    ;
+; cont_unit:cont_unit_deneme|mux_R0_sel[0]            ; cont_unit:cont_unit_deneme|mux_R0_sel[1] ; yes                    ;
+; cont_unit:cont_unit_deneme|mux_R0_sel[1]            ; cont_unit:cont_unit_deneme|mux_R0_sel[1] ; yes                    ;
+; cont_unit:cont_unit_deneme|R0_en                    ; cont_unit:cont_unit_deneme|R0_en         ; yes                    ;
+; cont_unit:cont_unit_deneme|mux_R1_sel[0]            ; cont_unit:cont_unit_deneme|mux_R0_sel[1] ; yes                    ;
+; cont_unit:cont_unit_deneme|mux_R1_sel[1]            ; cont_unit:cont_unit_deneme|mux_R0_sel[1] ; yes                    ;
+; cont_unit:cont_unit_deneme|R1_en                    ; cont_unit:cont_unit_deneme|R0_en         ; yes                    ;
+; cont_unit:cont_unit_deneme|acc_reset                ; cont_unit:cont_unit_deneme|qn1_reset     ; yes                    ;
+; cont_unit:cont_unit_deneme|acc_en                   ; cont_unit:cont_unit_deneme|acc_en        ; yes                    ;
+; cont_unit:cont_unit_deneme|acc_PS                   ; cont_unit:cont_unit_deneme|acc_PS        ; yes                    ;
+; cont_unit:cont_unit_deneme|Q_PS                     ; cont_unit:cont_unit_deneme|Q_PS          ; yes                    ;
+; cont_unit:cont_unit_deneme|Q_en                     ; cont_unit:cont_unit_deneme|Q_en          ; yes                    ;
+; cont_unit:cont_unit_deneme|qn1_reset                ; cont_unit:cont_unit_deneme|qn1_reset     ; yes                    ;
+; Number of user-specified and inferred latches = 18  ;                                          ;                        ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; cont_unit:cont_unit_deneme|state~6    ; Lost fanout        ;
+; cont_unit:cont_unit_deneme|state~7    ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 23    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |alp|cont_unit:cont_unit_deneme|seq_count[1]                              ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |alp|datapath:datapath_deneme|shift_reg:acc|out[1]                        ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |alp|datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg0|out[1] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |alp|datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg1|out[0] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |alp|datapath:datapath_deneme|alu_8op:alu|out[1]                          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |alp|cont_unit:cont_unit_deneme|alu_op[0]                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|alu_8op:alu ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_2x1:mux_alu_a ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg0 ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_4x1:mux_R0 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|shift_reg:Q ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|shift_reg:acc ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|const_value:inst11 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                                  ;
+; value          ; 0     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_4x1:mux_alu_b ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg1 ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|mux_4x1:mux_R1 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_deneme|simp_reg_sync_reset_with_enable:qn1 ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; W              ; 1     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 23                          ;
+;     ENA               ; 15                          ;
+;     plain             ; 8                           ;
+; arriav_lcell_comb     ; 105                         ;
+;     arith             ; 14                          ;
+;         0 data inputs ; 2                           ;
+;         5 data inputs ; 12                          ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 86                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 17                          ;
+;         6 data inputs ; 21                          ;
+; boundary_port         ; 21                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.30                        ;
+; Average LUT depth     ; 2.58                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Apr 22 11:50:42 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /okul/4-2/446/lab/exp1/simp_reg_sync_reset_with_enable.v
+    Info (12023): Found entity 1: simp_reg_sync_reset_with_enable File: D:/OKUL/4-2/446/LAB/EXP1/simp_reg_sync_reset_with_enable.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /okul/4-2/446/lab/exp1/simp_reg_sync_reset.v
+    Info (12023): Found entity 1: simp_reg_sync_reset File: D:/OKUL/4-2/446/LAB/EXP1/simp_reg_sync_reset.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /okul/4-2/446/lab/exp1/shift_reg.v
+    Info (12023): Found entity 1: shift_reg File: D:/OKUL/4-2/446/LAB/EXP1/shift_reg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /okul/4-2/446/lab/exp1/mux_4x1.v
+    Info (12023): Found entity 1: mux_4x1 File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /okul/4-2/446/lab/exp1/mux_2x1.v
+    Info (12023): Found entity 1: mux_2x1 File: D:/OKUL/4-2/446/LAB/EXP1/mux_2x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /okul/4-2/446/lab/exp1/const_value.v
+    Info (12023): Found entity 1: const_value File: D:/OKUL/4-2/446/LAB/EXP1/const_value.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /okul/4-2/446/lab/exp1/alu_8op.v
+    Info (12023): Found entity 1: alu_8op File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.bdf
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 1 design units, including 1 entities, in source file cont_unit.v
+    Info (12023): Found entity 1: cont_unit File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alp.v
+    Info (12023): Found entity 1: alp File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 1
+Info (12127): Elaborating entity "alp" for the top level hierarchy
+Info (12128): Elaborating entity "cont_unit" for hierarchy "cont_unit:cont_unit_deneme" File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 23
+Warning (10230): Verilog HDL assignment warning at cont_unit.v(62): truncated value with size 32 to match size of target (2) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at cont_unit.v(151): variable "Qn" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 151
+Warning (10235): Verilog HDL Always Construct warning at cont_unit.v(151): variable "qn1_out" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 151
+Warning (10235): Verilog HDL Always Construct warning at cont_unit.v(155): variable "Qn" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at cont_unit.v(155): variable "qn1_out" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at cont_unit.v(163): variable "Qn" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 163
+Warning (10235): Verilog HDL Always Construct warning at cont_unit.v(163): variable "qn1_out" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 163
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "RST", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "mux_R0_sel", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "mux_R1_sel", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "R0_en", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "R1_en", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "mux_alu_a_sel", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "mux_alu_b_sel", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "alu_op", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "acc_reset", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "qn1_reset", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "Q_en", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "Q_PS", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "acc_en", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "acc_PS", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "Q_RL", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "qn1_en", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10240): Verilog HDL Always Construct warning at cont_unit.v(72): inferring latch(es) for variable "acc_RL", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 72
+Warning (10034): Output port "Q_reset" at cont_unit.v(12) has no driver File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 12
+Info (10041): Inferred latch for "acc_RL" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "qn1_en" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "Q_RL" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "acc_PS" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "acc_en" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "Q_PS" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "Q_en" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "qn1_reset" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "acc_reset" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "alu_op[0]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "alu_op[1]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "alu_op[2]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "mux_alu_b_sel[0]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "mux_alu_b_sel[1]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "mux_alu_a_sel" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "R1_en" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "R0_en" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "mux_R1_sel[0]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "mux_R1_sel[1]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "mux_R0_sel[0]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "mux_R0_sel[1]" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (10041): Inferred latch for "RST" at cont_unit.v(148) File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:datapath_deneme" File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 28
+Warning (275011): Block or symbol "shift_reg" of instance "Q" overlaps another block or symbol
+Warning (275085): Found inconsistent dimensions for element "zero"
+Warning (275080): Converted elements in bus name "zero" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "zero[3..0]" to "zero3..0"
+    Warning (275081): Converted element name(s) from "zero[3..0]" to "zero3..0"
+    Warning (275081): Converted element name(s) from "zero[3..0]" to "zero3..0"
+    Warning (275081): Converted element name(s) from "zero[3..0]" to "zero3..0"
+    Warning (275081): Converted element name(s) from "zero[3..0]" to "zero3..0"
+    Warning (275081): Converted element name(s) from "zero[3..0]" to "zero3..0"
+Info (12128): Elaborating entity "alu_8op" for hierarchy "datapath:datapath_deneme|alu_8op:alu"
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(12): inferring latch(es) for variable "CO", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(12): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(12): inferring latch(es) for variable "OVF", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(12): inferring latch(es) for variable "N", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(12): inferring latch(es) for variable "Z", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(12): inferring latch(es) for variable "B_new", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(12): inferring latch(es) for variable "A_new", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 12
+Info (10041): Inferred latch for "Z" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (10041): Inferred latch for "N" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (10041): Inferred latch for "OVF" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (10041): Inferred latch for "out[0]" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (10041): Inferred latch for "out[1]" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (10041): Inferred latch for "out[2]" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (10041): Inferred latch for "out[3]" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (10041): Inferred latch for "CO" at alu_8op.v(22) File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (12128): Elaborating entity "mux_2x1" for hierarchy "datapath:datapath_deneme|mux_2x1:mux_alu_a"
+Warning (10240): Verilog HDL Always Construct warning at mux_2x1.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/mux_2x1.v Line: 8
+Info (10041): Inferred latch for "out[0]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[1]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[2]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[3]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_2x1.v Line: 10
+Info (12128): Elaborating entity "simp_reg_sync_reset_with_enable" for hierarchy "datapath:datapath_deneme|simp_reg_sync_reset_with_enable:Reg0"
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "datapath:datapath_deneme|mux_4x1:mux_R0"
+Warning (10240): Verilog HDL Always Construct warning at mux_4x1.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 8
+Info (10041): Inferred latch for "out[0]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[1]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[2]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[3]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Info (12128): Elaborating entity "shift_reg" for hierarchy "datapath:datapath_deneme|shift_reg:Q"
+Info (12128): Elaborating entity "const_value" for hierarchy "datapath:datapath_deneme|const_value:inst11"
+Warning (10230): Verilog HDL assignment warning at const_value.v(7): truncated value with size 32 to match size of target (4) File: D:/OKUL/4-2/446/LAB/EXP1/const_value.v Line: 7
+Info (12128): Elaborating entity "simp_reg_sync_reset_with_enable" for hierarchy "datapath:datapath_deneme|simp_reg_sync_reset_with_enable:qn1"
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_alu_b|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_alu_b|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_alu_b|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_alu_b|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R1|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R1|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R1|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R1|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R0|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R0|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R0|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|mux_4x1:mux_R0|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "datapath:datapath_deneme|alu_8op:alu|OVF" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 4
+Warning (14026): LATCH primitive "datapath:datapath_deneme|alu_8op:alu|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Warning (14026): LATCH primitive "datapath:datapath_deneme|alu_8op:alu|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Warning (14026): LATCH primitive "datapath:datapath_deneme|alu_8op:alu|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Warning (14026): LATCH primitive "datapath:datapath_deneme|alu_8op:alu|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP1/alu_8op.v Line: 22
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "cont_unit:cont_unit_deneme|R1_en" merged with LATCH primitive "cont_unit:cont_unit_deneme|R0_en" File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 10
+    Info (13026): Duplicate LATCH primitive "cont_unit:cont_unit_deneme|qn1_reset" merged with LATCH primitive "cont_unit:cont_unit_deneme|acc_reset" File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 13
+Warning (13012): Latch cont_unit:cont_unit_deneme|alu_op[0] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0] File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 4
+Warning (13012): Latch cont_unit:cont_unit_deneme|alu_op[1] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.00 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|alu_op[2] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal OP[0] File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 4
+Warning (13012): Latch cont_unit:cont_unit_deneme|mux_alu_b_sel[1] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.00 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|mux_alu_a_sel has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 15
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.00 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|mux_R0_sel[0] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LOAD File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 3
+Warning (13012): Latch cont_unit:cont_unit_deneme|mux_R0_sel[1] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.00 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|R0_en has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LOAD File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 3
+Warning (13012): Latch cont_unit:cont_unit_deneme|mux_R1_sel[0] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LOAD File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 3
+Warning (13012): Latch cont_unit:cont_unit_deneme|mux_R1_sel[1] has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LOAD File: D:/OKUL/4-2/446/LAB/EXP2/alp.v Line: 3
+Warning (13012): Latch cont_unit:cont_unit_deneme|acc_reset has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.00 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|acc_en has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.01 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|acc_PS has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.01 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|Q_PS has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 12
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.00 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Warning (13012): Latch cont_unit:cont_unit_deneme|Q_en has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 12
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_unit:cont_unit_deneme|state.01 File: D:/OKUL/4-2/446/LAB/EXP2/cont_unit.v Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 126 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 105 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Fri Apr 22 11:50:53 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
+
+

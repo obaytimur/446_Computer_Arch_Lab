@@ -1,0 +1,15 @@
+module extend(imm, extimm);
+
+input [11:0] imm;			// input initialization for 12 bit immediate
+output [31:0] extimm;	// output initialization for 32 bit extended output
+
+if (imm[11] == 1'b1) begin	// signed extension if twelveth bit is 1, extend ones
+	assign extimm = {20'b1, imm);
+end 
+
+else begin
+	assign extimm = {20'b0, imm); // otherwise, extend zeros
+end
+	
+endmodule
+	

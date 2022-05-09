@@ -9,7 +9,7 @@ reg [data_width-1:0] content[50:0];			// reg initialization for the content at t
 
 // function is taken from here "https://www.intel.com/content/www/us/en/programmable/quartushelp/13.0/mergedProjects/hdl/vlog/vlog_pro_inferred_memories.htm"
 initial begin
-	$readmemb("data_memory.txt", content);	// reads data at the address unconditionally
+	$readmemb("instruction_memory.txt", content);	// reads data at the address unconditionally
 end													
 
 assign read_data=content[address];			// assigns the content to the output unconditionally

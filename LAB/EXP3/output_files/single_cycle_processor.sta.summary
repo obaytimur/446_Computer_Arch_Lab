@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : -6.448
+TNS   : -18.388
+
+Type  : Slow 1100mV 85C Model Setup 'clock'
+Slack : -3.902
+TNS   : -103.170
+
+Type  : Slow 1100mV 85C Model Hold 'clock'
+Slack : 0.515
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 1.433
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.724
+TNS   : -33.254
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : -6.663
+TNS   : -19.033
+
+Type  : Slow 1100mV 0C Model Setup 'clock'
+Slack : -3.872
+TNS   : -100.378
+
+Type  : Slow 1100mV 0C Model Hold 'clock'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 1.536
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.724
+TNS   : -33.305
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 0.331
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : -2.325
+TNS   : -6.495
+
+Type  : Fast 1100mV 85C Model Setup 'clock'
+Slack : -2.160
+TNS   : -59.950
+
+Type  : Fast 1100mV 85C Model Hold 'clock'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 0.613
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.086
+TNS   : -2.564
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : -2.212
+TNS   : -6.204
+
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -1.767
+TNS   : -47.852
+
+Type  : Fast 1100mV 0C Model Hold 'clock'
+Slack : 0.189
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 0.575
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.087
+TNS   : -2.580
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'datapath:dpath|simp_reg_sync_reset:PC|out[2]'
+Slack : 0.461
+TNS   : 0.000
+
+------------------------------------------------------------

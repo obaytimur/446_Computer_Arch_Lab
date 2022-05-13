@@ -12,7 +12,7 @@ wire RegSrc, RegWrite, AluSrc, ShiftEnb, MemWrite, CompFlag;
 
 assign alu_cont = AluControl;
 
-cont_unit cont(instruction, RegSrc, RegWrite, AluControl, AluSrc, ShiftEnb, MemWrite, MemtoReg, Compflag);
+cont_unit cont(instruction, RegSrc, RegWrite, AluControl, AluSrc, ShiftEnb, MemWrite, MemtoReg, CompFlag);
 
 datapath dpath (.clock(clock), .reset(reset), .prog_counter(pc), .RegWrite(RegWrite), .inst(instruction), .rd1(rd1), .rd2(rd2),
 					 .alu_result(alu_result), .result(result), .ShiftEn(ShiftEnb), .RegSrc(RegSrc), .AluSrc(AluSrc), .comp(CompFlag),

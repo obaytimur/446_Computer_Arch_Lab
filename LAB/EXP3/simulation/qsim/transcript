@@ -1,7 +1,7 @@
 # do single_cycle_processor.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:18:47 on May 09,2022
+# Start time: 13:19:00 on May 13,2022
 # vcom -work work single_cycle_processor.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -15,20 +15,20 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity single_cycle_processor
 # -- Compiling architecture structure of single_cycle_processor
-# End time: 02:18:47 on May 09,2022, Elapsed time: 0:00:00
+# End time: 13:19:01 on May 13,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:18:47 on May 09,2022
-# vcom -work work simulation.vwf.vht 
+# Start time: 13:19:01 on May 13,2022
+# vcom -work work simulation_final.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity single_cycle_processor_vhd_vec_tst
 # -- Compiling architecture single_cycle_processor_arch of single_cycle_processor_vhd_vec_tst
-# End time: 02:18:47 on May 09,2022, Elapsed time: 0:00:00
+# End time: 13:19:02 on May 13,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.single_cycle_processor_vhd_vec_tst 
-# Start time: 02:18:47 on May 09,2022
+# Start time: 13:19:02 on May 13,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -47,8 +47,8 @@
 # Loading cyclonev.cyclonev_clkena(behavior)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 30474 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 681388 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
-# End time: 02:18:48 on May 09,2022, Elapsed time: 0:00:01
+# End time: 13:19:05 on May 13,2022, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 1

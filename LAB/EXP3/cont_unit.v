@@ -5,7 +5,7 @@ output RegSrc, RegWrite, AluSrc, ShiftEnb, MemWrite, Nowrite;
 output reg [2:0] AluControl;
 output reg [1:0] MemtoReg;
 
-assign RegSrc = (instruction[27:26] == 2'b01 && instruction[22] == 0 ) || (instruction [27:26] == 2'b00 && instruction[24:20] == 5'b10101) ;
+assign RegSrc = (instruction[27:26] == 2'b01 && instruction[22] == 0 && instruction[20] == 0 ) || (instruction [27:26] == 2'b00 && instruction[24:20] == 5'b10101) ;
 
 assign Nowrite = (instruction [27:26] == 2'b00 && instruction[24:20] == 5'b10101);
 
@@ -36,7 +36,7 @@ always@(*) begin
 end
 
 always@(instruction) begin
-	if ( instruction[27:26] == 2'b00) begin
+	if (instruction[27:26] == 2'b00) begin
 		if (instruction[24:21] == 4'b0100) begin
 			AluControl = 3'b000;
 		end

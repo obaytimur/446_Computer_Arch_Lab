@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off single_cycle_processor -c single_cycle_processor --vector_source="D:/OKUL/4-2/446/LAB/EXP3/simulation.vwf" --testbench_file="D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/simulation.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off single_cycle_processor -c single_cycle_processor --vector_source="D:/OKUL/4-2/446/LAB/EXP3/simulation_final.vwf" --testbench_file="D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/simulation_final.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,11 +26,11 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon May 09 02:18:43 2022
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off single_cycle_processor -c single_cycle_processor --vector_source=D:/OKUL/4-2/446/LAB/EXP3/simulation.vwf --testbench_file=D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/simulation.vwf.vht
+    Info: Processing started: Fri May 13 13:18:55 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off single_cycle_processor -c single_cycle_processor --vector_source=D:/OKUL/4-2/446/LAB/EXP3/simulation_final.vwf --testbench_file=D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/simulation_final.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-ch files
+ing test bench files
 
 Completed successfully. 
 
@@ -55,15 +55,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon May 09 02:18:45 2022
+    Info: Processing started: Fri May 13 13:18:57 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/ single_cycle_processor -c single_cycle_processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file single_cycle_processor.vho in folder "D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4726 megabytes
-    Info: Processing ended: Mon May 09 02:18:46 2022
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4745 megabytes
+    Info: Processing ended: Fri May 13 13:18:59 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 Completed successfully. 
 
@@ -86,7 +86,7 @@ Reading pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:18:47 on May 09,2022
+# Start time: 13:19:00 on May 13,2022
 # vcom -work work single_cycle_processor.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -96,27 +96,28 @@ Reading pref.tcl
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
 # -- Loading package altera_lnsim_components
+
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
 # -- Compiling entity single_cycle_processor
 # -- Compiling architecture structure of single_cycle_processor
 
-# End time: 02:18:47 on May 09,2022, Elapsed time: 0:00:00
+# End time: 13:19:01 on May 13,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 02:18:47 on May 09,2022
-# vcom -work work simulation.vwf.vht 
+# Start time: 13:19:01 on May 13,2022
+# vcom -work work simulation_final.vwf.vht 
+
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity single_cycle_processor_vhd_vec_tst
 # -- Compiling architecture single_cycle_processor_arch of single_cycle_processor_vhd_vec_tst
-# End time: 02:18:47 on May 09,2022, Elapsed time: 0:00:00
+# End time: 13:19:02 on May 13,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # vsim -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.single_cycle_processor_vhd_vec_tst 
-# Start time: 02:18:47 on May 09,2022
+# Start time: 13:19:02 on May 13,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -135,24 +136,24 @@ Reading pref.tcl
 # Loading cyclonev.cyclonev_clkena(behavior)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 30474 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 681388 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# End time: 02:18:48 on May 09,2022, Elapsed time: 0:00:01
+# End time: 13:19:05 on May 13,2022, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/OKUL/4-2/446/LAB/EXP3/simulation.vwf...
+Reading D:/OKUL/4-2/446/LAB/EXP3/simulation_final.vwf...
 
 Reading D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/single_cycle_processor.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/single_cycle_processor_20220509021848.sim.vwf
+Writing the resulting VWF to D:/OKUL/4-2/446/LAB/EXP3/simulation/qsim/single_cycle_processor_20220513131906.sim.vwf
 
 Finished VCD to VWF conversion.
 

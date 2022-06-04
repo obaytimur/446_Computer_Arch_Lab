@@ -1,0 +1,1417 @@
+Analysis & Synthesis report for multi_cycyle_processor
+Sat Jun 04 23:11:38 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: alu_8op:ALU
+ 14. Parameter Settings for User Entity Instance: mux_2x1:AluSrcAMux
+ 15. Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:Reg1Reg
+ 16. Parameter Settings for User Entity Instance: register_file:reg_file
+ 17. Parameter Settings for User Entity Instance: register_file:reg_file|mux_8x1:mux1
+ 18. Parameter Settings for User Entity Instance: register_file:reg_file|mux_8x1:mux2
+ 19. Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg0
+ 20. Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg1
+ 21. Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg2
+ 22. Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg3
+ 23. Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg4
+ 24. Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg5
+ 25. Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg6
+ 26. Parameter Settings for User Entity Instance: mux_4x1:WrtSrc_mux
+ 27. Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:reg_read_data
+ 28. Parameter Settings for User Entity Instance: unified_memory:Unified_memory
+ 29. Parameter Settings for User Entity Instance: mux_2x1:Mux_Memory
+ 30. Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:PCReg
+ 31. Parameter Settings for User Entity Instance: mux_4x1:ResultMux
+ 32. Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:ALUResultMux
+ 33. Parameter Settings for User Entity Instance: const_value:OneBit_one
+ 34. Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:Reg2Reg
+ 35. Parameter Settings for User Entity Instance: mux_2x1:Src1_reg
+ 36. Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:reg_inst
+ 37. Parameter Settings for User Entity Instance: const_value:Reg7Constant
+ 38. Parameter Settings for User Entity Instance: mux_4x1:Src2_reg
+ 39. Parameter Settings for User Entity Instance: const_value:Reg6Constant
+ 40. Parameter Settings for User Entity Instance: mux_4x1:Src3_reg
+ 41. Parameter Settings for User Entity Instance: mux_4x1:AluSrcBMux
+ 42. Parameter Settings for User Entity Instance: shift:Shift
+ 43. Parameter Settings for User Entity Instance: const_value:8Bit_One
+ 44. Port Connectivity Checks: "register_file:reg_file|decoder_3x8:dec"
+ 45. Post-Synthesis Netlist Statistics for Top Partition
+ 46. Elapsed Time Per Partition
+ 47. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Jun 04 23:11:38 2022       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; multi_cycyle_processor                      ;
+; Top-level Entity Name           ; datapath                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 496                                         ;
+; Total pins                      ; 79                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                 ;
++---------------------------------------------------------------------------------+--------------------+------------------------+
+; Option                                                                          ; Setting            ; Default Value          ;
++---------------------------------------------------------------------------------+--------------------+------------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                        ;
+; Top-level entity name                                                           ; datapath           ; multi_cycyle_processor ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V              ;
+; Use smart compilation                                                           ; Off                ; Off                    ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                     ;
+; Enable compact report table                                                     ; Off                ; Off                    ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto                   ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                    ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                    ;
+; Preserve fewer node names                                                       ; On                 ; On                     ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable                 ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001           ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993              ;
+; State Machine Processing                                                        ; Auto               ; Auto                   ;
+; Safe State Machine                                                              ; Off                ; Off                    ;
+; Extract Verilog State Machines                                                  ; On                 ; On                     ;
+; Extract VHDL State Machines                                                     ; On                 ; On                     ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                    ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000                   ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                    ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                     ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                     ;
+; Parallel Synthesis                                                              ; On                 ; On                     ;
+; DSP Block Balancing                                                             ; Auto               ; Auto                   ;
+; NOT Gate Push-Back                                                              ; On                 ; On                     ;
+; Power-Up Don't Care                                                             ; On                 ; On                     ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                    ;
+; Remove Duplicate Registers                                                      ; On                 ; On                     ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                    ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                    ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                    ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                    ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                    ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                     ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                    ;
+; Optimization Technique                                                          ; Balanced           ; Balanced               ;
+; Carry Chain Length                                                              ; 70                 ; 70                     ;
+; Auto Carry Chains                                                               ; On                 ; On                     ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                     ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                    ;
+; Auto ROM Replacement                                                            ; On                 ; On                     ;
+; Auto RAM Replacement                                                            ; On                 ; On                     ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                     ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto                   ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto                   ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                     ;
+; Strict RAM Replacement                                                          ; Off                ; Off                    ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                     ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                    ;
+; Auto Resource Sharing                                                           ; Off                ; Off                    ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                    ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                    ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                    ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                     ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                    ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                     ;
+; Report Parameter Settings                                                       ; On                 ; On                     ;
+; Report Source Assignments                                                       ; On                 ; On                     ;
+; Report Connectivity Checks                                                      ; On                 ; On                     ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                    ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                      ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation     ;
+; HDL message level                                                               ; Level2             ; Level2                 ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                    ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000                   ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000                   ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                    ;
+; Clock MUX Protection                                                            ; On                 ; On                     ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                    ;
+; Block Design Naming                                                             ; Auto               ; Auto                   ;
+; SDC constraint protection                                                       ; Off                ; Off                    ;
+; Synthesis Effort                                                                ; Auto               ; Auto                   ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                     ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                    ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium                 ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto                   ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                     ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                     ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                    ;
++---------------------------------------------------------------------------------+--------------------+------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++-----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type                          ; File Name with Absolute Path                               ; Library ;
++-----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
+; unified_memory.v                  ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/unified_memory.v                  ;         ;
+; shift.v                           ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/shift.v                           ;         ;
+; simp_reg_sync_reset_with_enable.v ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/simp_reg_sync_reset_with_enable.v ;         ;
+; register_file.v                   ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/register_file.v                   ;         ;
+; mux_4x1.v                         ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v                         ;         ;
+; mux_2x1.v                         ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v                         ;         ;
+; const_value.v                     ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/const_value.v                     ;         ;
+; alu_8op.v                         ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v                         ;         ;
+; mux_8x1.v                         ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v                         ;         ;
+; decoder_3x8.v                     ; yes             ; User Verilog HDL File              ; D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v                     ;         ;
+; datapath.bdf                      ; yes             ; User Block Diagram/Schematic File  ; D:/OKUL/4-2/446/LAB/EXP4/datapath.bdf                      ;         ;
+; unified_memory.txt                ; yes             ; User File                          ; D:/OKUL/4-2/446/LAB/EXP4/unified_memory.txt                ;         ;
++-----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 423         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 454         ;
+;     -- 7 input functions                    ; 14          ;
+;     -- 6 input functions                    ; 202         ;
+;     -- 5 input functions                    ; 115         ;
+;     -- 4 input functions                    ; 32          ;
+;     -- <=3 input functions                  ; 91          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 496         ;
+;                                             ;             ;
+; I/O pins                                    ; 79          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 496         ;
+; Total fan-out                               ; 3963        ;
+; Average fan-out                             ; 3.58        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                  ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------------------+--------------+
+; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Entity Name                     ; Library Name ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------------------+--------------+
+; |datapath                                          ; 454 (0)             ; 496 (0)                   ; 0                 ; 0          ; 79   ; 0            ; |datapath                                                             ; datapath                        ; work         ;
+;    |alu_8op:ALU|                                   ; 127 (127)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|alu_8op:ALU                                                 ; alu_8op                         ; work         ;
+;    |mux_2x1:AluSrcAMux|                            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|mux_2x1:AluSrcAMux                                          ; mux_2x1                         ; work         ;
+;    |mux_2x1:Mux_Memory|                            ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|mux_2x1:Mux_Memory                                          ; mux_2x1                         ; work         ;
+;    |mux_2x1:Src1_reg|                              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|mux_2x1:Src1_reg                                            ; mux_2x1                         ; work         ;
+;    |mux_4x1:AluSrcBMux|                            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|mux_4x1:AluSrcBMux                                          ; mux_4x1                         ; work         ;
+;    |mux_4x1:ResultMux|                             ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|mux_4x1:ResultMux                                           ; mux_4x1                         ; work         ;
+;    |mux_4x1:Src2_reg|                              ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|mux_4x1:Src2_reg                                            ; mux_4x1                         ; work         ;
+;    |mux_4x1:WrtSrc_mux|                            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|mux_4x1:WrtSrc_mux                                          ; mux_4x1                         ; work         ;
+;    |register_file:reg_file|                        ; 15 (8)              ; 40 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |datapath|register_file:reg_file                                      ; register_file                   ; work         ;
+;       |decoder_3x8:dec|                            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|register_file:reg_file|decoder_3x8:dec                      ; decoder_3x8                     ; work         ;
+;       |simp_reg_sync_reset_with_enable:reg0|       ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg0 ; simp_reg_sync_reset_with_enable ; work         ;
+;       |simp_reg_sync_reset_with_enable:reg1|       ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg1 ; simp_reg_sync_reset_with_enable ; work         ;
+;       |simp_reg_sync_reset_with_enable:reg2|       ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg2 ; simp_reg_sync_reset_with_enable ; work         ;
+;       |simp_reg_sync_reset_with_enable:reg3|       ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg3 ; simp_reg_sync_reset_with_enable ; work         ;
+;       |simp_reg_sync_reset_with_enable:reg6|       ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg6 ; simp_reg_sync_reset_with_enable ; work         ;
+;    |shift:Shift|                                   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|shift:Shift                                                 ; shift                           ; work         ;
+;    |simp_reg_sync_reset_with_enable:ALUResultMux|  ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|simp_reg_sync_reset_with_enable:ALUResultMux                ; simp_reg_sync_reset_with_enable ; work         ;
+;    |simp_reg_sync_reset_with_enable:PCReg|         ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|simp_reg_sync_reset_with_enable:PCReg                       ; simp_reg_sync_reset_with_enable ; work         ;
+;    |simp_reg_sync_reset_with_enable:Reg1Reg|       ; 24 (24)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|simp_reg_sync_reset_with_enable:Reg1Reg                     ; simp_reg_sync_reset_with_enable ; work         ;
+;    |simp_reg_sync_reset_with_enable:Reg2Reg|       ; 17 (17)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|simp_reg_sync_reset_with_enable:Reg2Reg                     ; simp_reg_sync_reset_with_enable ; work         ;
+;    |simp_reg_sync_reset_with_enable:reg_inst|      ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|simp_reg_sync_reset_with_enable:reg_inst                    ; simp_reg_sync_reset_with_enable ; work         ;
+;    |simp_reg_sync_reset_with_enable:reg_read_data| ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |datapath|simp_reg_sync_reset_with_enable:reg_read_data               ; simp_reg_sync_reset_with_enable ; work         ;
+;    |unified_memory:Unified_memory|                 ; 203 (203)           ; 408 (408)                 ; 0                 ; 0          ; 0    ; 0            ; |datapath|unified_memory:Unified_memory                               ; unified_memory                  ; work         ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; alu_8op:ALU|CO                                      ; alu_8op:ALU|CO      ; yes                    ;
+; alu_8op:ALU|OVF                                     ; alu_8op:ALU|CO      ; yes                    ;
+; alu_8op:ALU|N                                       ; alu_8op:ALU|CO      ; yes                    ;
+; alu_8op:ALU|Z                                       ; alu_8op:ALU|CO      ; yes                    ;
+; register_file:reg_file|reg7[2]                      ; BranchWrite         ; yes                    ;
+; register_file:reg_file|reg7[1]                      ; BranchWrite         ; yes                    ;
+; register_file:reg_file|reg7[3]                      ; BranchWrite         ; yes                    ;
+; register_file:reg_file|reg7[4]                      ; BranchWrite         ; yes                    ;
+; register_file:reg_file|reg7[0]                      ; BranchWrite         ; yes                    ;
+; register_file:reg_file|reg7[7]                      ; BranchWrite         ; yes                    ;
+; register_file:reg_file|reg7[5]                      ; BranchWrite         ; yes                    ;
+; register_file:reg_file|reg7[6]                      ; BranchWrite         ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++--------------------------------------------------------------------+----------------------------------------+
+; Register name                                                      ; Reason for Removal                     ;
++--------------------------------------------------------------------+----------------------------------------+
+; unified_memory:Unified_memory|content[7][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[7][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[7][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[7][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[7][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[7][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[7][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[7][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[6][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[5][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[4][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[3][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[2][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[1][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[0][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[8][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][8]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][9]                        ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][10]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][11]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][12]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][13]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][14]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[9][15]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[10][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[11][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[12][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[13][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[14][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[15][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[16][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[17][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[18][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[19][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[20][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[21][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[22][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[23][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[24][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[25][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[26][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[27][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[28][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[29][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[30][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[31][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[32][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[33][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[34][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[35][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[36][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[37][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[38][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[39][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[40][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[41][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[42][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[43][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[44][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[45][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[46][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[47][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[48][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[49][15]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][8]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][9]                       ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][10]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][11]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][12]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][13]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][14]                      ; Stuck at GND due to stuck port data_in ;
+; unified_memory:Unified_memory|content[50][15]                      ; Stuck at GND due to stuck port data_in ;
+; simp_reg_sync_reset_with_enable:reg_inst|out[8..10]                ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[2] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[2] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[1] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[1] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[3] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[3] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[4] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[4] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[0] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[0] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[7] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[7] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[5] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[5] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[6] ; Stuck at GND due to stuck port data_in ;
+; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[6] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 427                            ;                                        ;
++--------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                    ;
++----------------------------------------------+---------------------------+---------------------------------------------------------------------+
+; Register name                                ; Reason for Removal        ; Registers Removed due to This Register                              ;
++----------------------------------------------+---------------------------+---------------------------------------------------------------------+
+; unified_memory:Unified_memory|content[7][10] ; Stuck at GND              ; simp_reg_sync_reset_with_enable:reg_inst|out[10],                   ;
+;                                              ; due to stuck port data_in ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[2], ;
+;                                              ;                           ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[1], ;
+;                                              ;                           ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[3], ;
+;                                              ;                           ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[4], ;
+;                                              ;                           ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[0], ;
+;                                              ;                           ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[7], ;
+;                                              ;                           ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[5], ;
+;                                              ;                           ; register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[6]  ;
+; unified_memory:Unified_memory|content[7][9]  ; Stuck at GND              ; simp_reg_sync_reset_with_enable:reg_inst|out[9]                     ;
+;                                              ; due to stuck port data_in ;                                                                     ;
+; unified_memory:Unified_memory|content[7][8]  ; Stuck at GND              ; simp_reg_sync_reset_with_enable:reg_inst|out[8]                     ;
+;                                              ; due to stuck port data_in ;                                                                     ;
++----------------------------------------------+---------------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 496   ;
+; Number of registers using Synchronous Clear  ; 88    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 488   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |datapath|simp_reg_sync_reset_with_enable:reg_inst|out[9]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|simp_reg_sync_reset_with_enable:reg_read_data|out[5]               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|simp_reg_sync_reset_with_enable:PCReg|out[5]                       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg0|out[3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg4|out[5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg2|out[7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg6|out[2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg1|out[2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg5|out[1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |datapath|register_file:reg_file|simp_reg_sync_reset_with_enable:reg3|out[6] ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; Yes        ; |datapath|simp_reg_sync_reset_with_enable:Reg2Reg|out[0]                     ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; Yes        ; |datapath|simp_reg_sync_reset_with_enable:Reg1Reg|out[4]                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |datapath|mux_4x1:AluSrcBMux|out[6]                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |datapath|mux_4x1:Src3_reg|out[1]                                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|shift:Shift|output_data[0]                                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |datapath|alu_8op:ALU|CO                                                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|mux_4x1:ResultMux|out[4]                                           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |datapath|mux_4x1:Src2_reg|out[0]                                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|mux_4x1:WrtSrc_mux|out[6]                                          ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |datapath|alu_8op:ALU|out[2]                                                 ;
+; 51:1               ; 8 bits    ; 272 LEs       ; 272 LEs              ; 0 LEs                  ; No         ; |datapath|unified_memory:Unified_memory|Mux13                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu_8op:ALU ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; W              ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2x1:AluSrcAMux ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; W              ; 8     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:Reg1Reg ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; W              ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|mux_8x1:mux1 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|mux_8x1:mux2 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg0 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg1 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg3 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg4 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg5 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:reg_file|simp_reg_sync_reset_with_enable:reg6 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4x1:WrtSrc_mux ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; W              ; 8     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:reg_read_data ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: unified_memory:Unified_memory ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; adr_width      ; 8     ; Signed Integer                                    ;
+; data_width     ; 16    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2x1:Mux_Memory ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; W              ; 8     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:PCReg ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4x1:ResultMux ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; W              ; 8     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:ALUResultMux ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: const_value:OneBit_one ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; W              ; 1     ; Signed Integer                             ;
+; value          ; 1     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:Reg2Reg ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2x1:Src1_reg ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; W              ; 3     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simp_reg_sync_reset_with_enable:reg_inst ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; W              ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: const_value:Reg7Constant ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; W              ; 3     ; Signed Integer                               ;
+; value          ; 7     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4x1:Src2_reg ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; W              ; 3     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: const_value:Reg6Constant ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; W              ; 3     ; Signed Integer                               ;
+; value          ; 6     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4x1:Src3_reg ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; W              ; 3     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4x1:AluSrcBMux ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; W              ; 8     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shift:Shift ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; W              ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: const_value:8Bit_One ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; W              ; 8     ; Signed Integer                           ;
+; value          ; 1     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_file:reg_file|decoder_3x8:dec"                                               ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; out[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 496                         ;
+;     ENA               ; 408                         ;
+;     ENA SCLR          ; 80                          ;
+;     SCLR              ; 8                           ;
+; arriav_lcell_comb     ; 455                         ;
+;     arith             ; 53                          ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 18                          ;
+;         3 data inputs ; 8                           ;
+;         5 data inputs ; 24                          ;
+;     extend            ; 14                          ;
+;         7 data inputs ; 14                          ;
+;     normal            ; 388                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 32                          ;
+;         5 data inputs ; 91                          ;
+;         6 data inputs ; 202                         ;
+; boundary_port         ; 79                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.30                       ;
+; Average LUT depth     ; 5.64                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat Jun 04 23:11:22 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multi_cycyle_processor -c multi_cycyle_processor
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file extend.v
+    Info (12023): Found entity 1: extend File: D:/OKUL/4-2/446/LAB/EXP4/extend.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file unified_memory.v
+    Info (12023): Found entity 1: unified_memory File: D:/OKUL/4-2/446/LAB/EXP4/unified_memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shift.v
+    Info (12023): Found entity 1: shift File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_16x1.v
+    Info (12023): Found entity 1: mux_16x1 File: D:/OKUL/4-2/446/LAB/EXP4/mux_16x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_4x16.v
+    Info (12023): Found entity 1: decoder_4x16 File: D:/OKUL/4-2/446/LAB/EXP4/decoder_4x16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file simp_reg_sync_reset_with_enable.v
+    Info (12023): Found entity 1: simp_reg_sync_reset_with_enable File: D:/OKUL/4-2/446/LAB/EXP4/simp_reg_sync_reset_with_enable.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shift_reg.v
+    Info (12023): Found entity 1: shift_reg File: D:/OKUL/4-2/446/LAB/EXP4/shift_reg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
+    Info (12023): Found entity 1: register_file File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4x1.v
+    Info (12023): Found entity 1: mux_4x1 File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2x1.v
+    Info (12023): Found entity 1: mux_2x1 File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file const_value.v
+    Info (12023): Found entity 1: const_value File: D:/OKUL/4-2/446/LAB/EXP4/const_value.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu_8op.v
+    Info (12023): Found entity 1: alu_8op File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_8x1.v
+    Info (12023): Found entity 1: mux_8x1 File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_3x8.v
+    Info (12023): Found entity 1: decoder_3x8 File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.bdf
+    Info (12023): Found entity 1: datapath
+Info (12127): Elaborating entity "datapath" for the top level hierarchy
+Warning (275002): No superset bus at connection
+Info (12128): Elaborating entity "alu_8op" for hierarchy "alu_8op:ALU"
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(13): inferring latch(es) for variable "CO", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(13): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(13): inferring latch(es) for variable "OVF", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(13): inferring latch(es) for variable "N", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(13): inferring latch(es) for variable "Z", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(13): inferring latch(es) for variable "B_new", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at alu_8op.v(13): inferring latch(es) for variable "A_new", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 13
+Info (10041): Inferred latch for "Z" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "N" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "OVF" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[0]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[1]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[2]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[3]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[4]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[5]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[6]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "out[7]" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (10041): Inferred latch for "CO" at alu_8op.v(27) File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Info (12128): Elaborating entity "mux_2x1" for hierarchy "mux_2x1:AluSrcAMux"
+Warning (10240): Verilog HDL Always Construct warning at mux_2x1.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 8
+Info (10041): Inferred latch for "out[0]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[1]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[2]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[3]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[4]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[5]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[6]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[7]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (12128): Elaborating entity "simp_reg_sync_reset_with_enable" for hierarchy "simp_reg_sync_reset_with_enable:Reg1Reg"
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:reg_file"
+Warning (10240): Verilog HDL Always Construct warning at register_file.v(12): inferring latch(es) for variable "reg7", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[0]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[1]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[2]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[3]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[4]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[5]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[6]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (10041): Inferred latch for "reg7[7]" at register_file.v(12) File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 12
+Info (12128): Elaborating entity "decoder_3x8" for hierarchy "register_file:reg_file|decoder_3x8:dec" File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 17
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(12): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 12
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(14): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 14
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(16): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 16
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(18): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 18
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(20): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 20
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(22): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 22
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(24): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 24
+Warning (10230): Verilog HDL assignment warning at decoder_3x8.v(26): truncated value with size 16 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 26
+Warning (10240): Verilog HDL Always Construct warning at decoder_3x8.v(11): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 11
+Info (10041): Inferred latch for "out[0]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (10041): Inferred latch for "out[1]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (10041): Inferred latch for "out[2]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (10041): Inferred latch for "out[3]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (10041): Inferred latch for "out[4]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (10041): Inferred latch for "out[5]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (10041): Inferred latch for "out[6]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (10041): Inferred latch for "out[7]" at decoder_3x8.v(13) File: D:/OKUL/4-2/446/LAB/EXP4/decoder_3x8.v Line: 13
+Info (12128): Elaborating entity "mux_8x1" for hierarchy "register_file:reg_file|mux_8x1:mux1" File: D:/OKUL/4-2/446/LAB/EXP4/register_file.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at mux_8x1.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 8
+Info (10041): Inferred latch for "out[0]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (10041): Inferred latch for "out[1]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (10041): Inferred latch for "out[2]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (10041): Inferred latch for "out[3]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (10041): Inferred latch for "out[4]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (10041): Inferred latch for "out[5]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (10041): Inferred latch for "out[6]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (10041): Inferred latch for "out[7]" at mux_8x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "mux_4x1:WrtSrc_mux"
+Warning (10240): Verilog HDL Always Construct warning at mux_4x1.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 8
+Info (10041): Inferred latch for "out[0]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[1]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[2]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[3]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[4]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[5]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[6]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[7]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (12128): Elaborating entity "unified_memory" for hierarchy "unified_memory:Unified_memory"
+Warning (10850): Verilog HDL warning at unified_memory.v(12): number of words (64) in memory file does not match the number of elements in the address range [0:50] File: D:/OKUL/4-2/446/LAB/EXP4/unified_memory.v Line: 12
+Info (12128): Elaborating entity "const_value" for hierarchy "const_value:OneBit_one"
+Warning (10230): Verilog HDL assignment warning at const_value.v(5): truncated value with size 32 to match size of target (1) File: D:/OKUL/4-2/446/LAB/EXP4/const_value.v Line: 5
+Info (12128): Elaborating entity "mux_2x1" for hierarchy "mux_2x1:Src1_reg"
+Warning (10240): Verilog HDL Always Construct warning at mux_2x1.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 8
+Info (10041): Inferred latch for "out[0]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[1]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (10041): Inferred latch for "out[2]" at mux_2x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_2x1.v Line: 10
+Info (12128): Elaborating entity "simp_reg_sync_reset_with_enable" for hierarchy "simp_reg_sync_reset_with_enable:reg_inst"
+Info (12128): Elaborating entity "const_value" for hierarchy "const_value:Reg7Constant"
+Warning (10230): Verilog HDL assignment warning at const_value.v(5): truncated value with size 32 to match size of target (3) File: D:/OKUL/4-2/446/LAB/EXP4/const_value.v Line: 5
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "mux_4x1:Src2_reg"
+Warning (10240): Verilog HDL Always Construct warning at mux_4x1.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 8
+Info (10041): Inferred latch for "out[0]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[1]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (10041): Inferred latch for "out[2]" at mux_4x1.v(10) File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Info (12128): Elaborating entity "const_value" for hierarchy "const_value:Reg6Constant"
+Warning (10230): Verilog HDL assignment warning at const_value.v(5): truncated value with size 32 to match size of target (3) File: D:/OKUL/4-2/446/LAB/EXP4/const_value.v Line: 5
+Info (12128): Elaborating entity "shift" for hierarchy "shift:Shift"
+Warning (10240): Verilog HDL Always Construct warning at shift.v(8): inferring latch(es) for variable "output_data", which holds its previous value in one or more paths through the always construct File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 8
+Info (10041): Inferred latch for "output_data[0]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (10041): Inferred latch for "output_data[1]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (10041): Inferred latch for "output_data[2]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (10041): Inferred latch for "output_data[3]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (10041): Inferred latch for "output_data[4]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (10041): Inferred latch for "output_data[5]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (10041): Inferred latch for "output_data[6]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (10041): Inferred latch for "output_data[7]" at shift.v(11) File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Info (12128): Elaborating entity "const_value" for hierarchy "const_value:8Bit_One"
+Warning (10230): Verilog HDL assignment warning at const_value.v(5): truncated value with size 32 to match size of target (8) File: D:/OKUL/4-2/446/LAB/EXP4/const_value.v Line: 5
+Warning (14026): LATCH primitive "shift:Shift|output_data[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "shift:Shift|output_data[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "shift:Shift|output_data[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "shift:Shift|output_data[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "shift:Shift|output_data[4]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "shift:Shift|output_data[5]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "shift:Shift|output_data[6]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "shift:Shift|output_data[7]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/shift.v Line: 11
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[4]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[5]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[6]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:AluSrcBMux|out[7]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:Src3_reg|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:Src3_reg|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:Src3_reg|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:Src2_reg|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:Src2_reg|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:Src2_reg|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[4]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[5]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[6]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:ResultMux|out[7]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[4]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[5]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[6]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "mux_4x1:WrtSrc_mux|out[7]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_4x1.v Line: 10
+Warning (14026): LATCH primitive "alu_8op:ALU|out[5]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "alu_8op:ALU|out[4]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "alu_8op:ALU|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "alu_8op:ALU|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "alu_8op:ALU|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "alu_8op:ALU|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "alu_8op:ALU|out[7]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "alu_8op:ALU|out[6]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 27
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[6]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[7]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[5]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[4]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux2|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[7]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[6]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[5]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[4]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[3]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[2]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[1]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (14026): LATCH primitive "register_file:reg_file|mux_8x1:mux1|out[0]" is permanently enabled File: D:/OKUL/4-2/446/LAB/EXP4/mux_8x1.v Line: 10
+Warning (13012): Latch alu_8op:ALU|CO has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUControl[2]
+Warning (13012): Latch alu_8op:ALU|OVF has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUControl[2]
+Warning (13012): Latch alu_8op:ALU|N has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUControl[2]
+Warning (13012): Latch alu_8op:ALU|Z has unsafe behavior File: D:/OKUL/4-2/446/LAB/EXP4/alu_8op.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUControl[2]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "MemoryData[15]" is stuck at GND
+    Warning (13410): Pin "MemoryData[14]" is stuck at GND
+    Warning (13410): Pin "MemoryData[13]" is stuck at GND
+    Warning (13410): Pin "MemoryData[12]" is stuck at GND
+    Warning (13410): Pin "MemoryData[11]" is stuck at GND
+    Warning (13410): Pin "MemoryData[10]" is stuck at GND
+    Warning (13410): Pin "MemoryData[9]" is stuck at GND
+    Warning (13410): Pin "MemoryData[8]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1013 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 27 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 934 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 109 warnings
+    Info: Peak virtual memory: 4834 megabytes
+    Info: Processing ended: Sat Jun 04 23:11:38 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:30
+
+

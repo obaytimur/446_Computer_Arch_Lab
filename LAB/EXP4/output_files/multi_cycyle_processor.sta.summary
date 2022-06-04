@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'BranchWrite'
+Slack : -11.960
+TNS   : -83.169
+
+Type  : Slow 1100mV 85C Model Setup 'clock'
+Slack : -11.929
+TNS   : -5060.066
+
+Type  : Slow 1100mV 85C Model Setup 'ALUControl[1]'
+Slack : -11.432
+TNS   : -41.798
+
+Type  : Slow 1100mV 85C Model Hold 'clock'
+Slack : 0.436
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'ALUControl[1]'
+Slack : 1.470
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'BranchWrite'
+Slack : 1.605
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.724
+TNS   : -553.119
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'BranchWrite'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ALUControl[1]'
+Slack : 0.274
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'BranchWrite'
+Slack : -12.120
+TNS   : -85.622
+
+Type  : Slow 1100mV 0C Model Setup 'clock'
+Slack : -12.079
+TNS   : -5111.959
+
+Type  : Slow 1100mV 0C Model Setup 'ALUControl[1]'
+Slack : -11.848
+TNS   : -43.054
+
+Type  : Slow 1100mV 0C Model Hold 'clock'
+Slack : 0.270
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'ALUControl[1]'
+Slack : 1.282
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'BranchWrite'
+Slack : 1.802
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.724
+TNS   : -558.655
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'BranchWrite'
+Slack : 0.097
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ALUControl[1]'
+Slack : 0.224
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'clock'
+Slack : -4.795
+TNS   : -1873.935
+
+Type  : Fast 1100mV 85C Model Setup 'BranchWrite'
+Slack : -4.673
+TNS   : -29.090
+
+Type  : Fast 1100mV 85C Model Setup 'ALUControl[1]'
+Slack : -4.290
+TNS   : -15.583
+
+Type  : Fast 1100mV 85C Model Hold 'clock'
+Slack : 0.198
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'BranchWrite'
+Slack : 0.495
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'ALUControl[1]'
+Slack : 0.577
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'BranchWrite'
+Slack : -0.126
+TNS   : -0.859
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.089
+TNS   : -42.209
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ALUControl[1]'
+Slack : -0.057
+TNS   : -0.293
+
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -4.220
+TNS   : -1653.143
+
+Type  : Fast 1100mV 0C Model Setup 'BranchWrite'
+Slack : -4.153
+TNS   : -26.238
+
+Type  : Fast 1100mV 0C Model Setup 'ALUControl[1]'
+Slack : -3.879
+TNS   : -14.144
+
+Type  : Fast 1100mV 0C Model Hold 'clock'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'ALUControl[1]'
+Slack : 0.474
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'BranchWrite'
+Slack : 0.484
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'BranchWrite'
+Slack : -0.107
+TNS   : -0.715
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.088
+TNS   : -41.509
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ALUControl[1]'
+Slack : -0.044
+TNS   : -0.224
+
+------------------------------------------------------------

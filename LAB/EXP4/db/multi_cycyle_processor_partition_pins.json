@@ -1,0 +1,293 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "CO",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MemoryData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "result[7]",
+					"strict" : false
+				},
+				{
+					"name" : "result[6]",
+					"strict" : false
+				},
+				{
+					"name" : "result[5]",
+					"strict" : false
+				},
+				{
+					"name" : "result[4]",
+					"strict" : false
+				},
+				{
+					"name" : "result[3]",
+					"strict" : false
+				},
+				{
+					"name" : "result[2]",
+					"strict" : false
+				},
+				{
+					"name" : "result[1]",
+					"strict" : false
+				},
+				{
+					"name" : "result[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUResult[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftedResult[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OVF",
+					"strict" : false
+				},
+				{
+					"name" : "N",
+					"strict" : false
+				},
+				{
+					"name" : "Z",
+					"strict" : false
+				},
+				{
+					"name" : "AdrSrc",
+					"strict" : false
+				},
+				{
+					"name" : "ALUControl[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUControl[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUControl[1]",
+					"strict" : false
+				},
+				{
+					"name" : "FlagWrite",
+					"strict" : false
+				},
+				{
+					"name" : "ResultSrc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ResultSrc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSrcB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSrcB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftSrc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ShiftSrc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSrcA",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "IRWrite",
+					"strict" : false
+				},
+				{
+					"name" : "RegSrcB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegSrcB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFileEnb",
+					"strict" : false
+				},
+				{
+					"name" : "PCWrite",
+					"strict" : false
+				},
+				{
+					"name" : "RegSrcA",
+					"strict" : false
+				},
+				{
+					"name" : "MemWrite",
+					"strict" : false
+				},
+				{
+					"name" : "WriteSrc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteSrc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegSrcC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegSrcC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegWrite",
+					"strict" : false
+				},
+				{
+					"name" : "BranchWrite",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
